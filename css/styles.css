@@ -1,0 +1,1644 @@
+/* ==========================================================================
+   GraphicaWeb — Landing page
+   Basada en la estética de AstroDeck (ThemeWagon)
+   Mobile-first · breakpoints: 640 (tablet) · 1024 (laptop) · 1280 (desktop)
+   ========================================================================== */
+
+/* ---------- Design tokens ------------------------------------------------ */
+:root {
+  /* Color */
+  --ink:        #0a0a0a;   /* texto principal / negro */
+  --ink-soft:   #404040;   /* texto secundario fuerte */
+  --muted:      #6b7280;   /* texto secundario */
+  --bg:         #ffffff;
+  /* Punto medio deliberado. El delimitador de sección NO es este relleno
+     sino el borde de .section--alt: un gris de 8 niveles sobre blanco da
+     1.07:1 de contraste y desaparece en paneles de 6 bits, mientras que
+     una línea de 1px se ve en cualquier pantalla —el ojo detecta bordes
+     mucho mejor que superficies planas—. Subirlo más lo vuelve pesado en
+     pantallas calibradas; bajarlo no cuesta nada porque el borde sostiene. */
+  --bg-alt:     #f7f7f7;   /* secciones claras alternas */
+  --bg-dark:    #0a0a0a;   /* sección CTA oscura */
+  /* Verificado en monitor de oficina: con #efefef (16 niveles sobre blanco,
+     1.15:1) el borde se pierde. #dedede da 1.35:1 y aguanta en paneles sin
+     calibrar. No aclararlo: es lo que sostiene la separación entre secciones
+     —ver .section--alt— y el gris de fondo por sí solo no basta. */
+  --border:     #dedede;
+  --border-dark:#262626;
+
+  /* Acento — verde menta "resaltador" de AstroDeck */
+  --accent:        #4ade80;   /* verde sólido para detalles */
+  --accent-strong: #16a34a;   /* verde para texto/links sobre claro */
+  --accent-soft:   #bbf7d0;   /* highlight tipo marcador */
+
+  /* Tipografía */
+  --font: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+
+  /* Layout */
+  --maxw: 1180px;
+  --gutter: 20px;
+  --header-h: 64px;
+
+  /* Radios y sombras */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+  --shadow-md: 0 10px 30px -12px rgba(0,0,0,.18);
+}
+
+/* ---------- Reset -------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+ul { list-style: none; padding: 0; }
+:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 3px; }
+
+/* ---------- Helpers ------------------------------------------------------ */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* De 865px en adelante */
+@media (min-width: 865px) {
+  .container {
+    width: 90%;
+  }
+}
+
+.section { padding-block: 64px; }
+/* El borde hace el trabajo de delimitar; el fondo sólo lo refuerza. Antes
+   esto vivía como style="border-bottom" suelto en una sola sección del
+   HTML, así que las otras dos quedaban sin separación visible en monitores
+   sin calibrar. */
+
+.section--alt {
+  background: var(--bg-alt);
+  border-block: 1px solid var(--border);
+}
+
+.section--notes {
+  padding-block: unset;
+  padding: 30px;
+}
+
+.eyebrow {
+  font-size: .72rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--muted);
+}
+.hl {
+  background: var(--accent-soft);
+  padding: .04em .12em;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.center { text-align: center; }
+
+/* Botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  font-weight: 600;
+  font-size: .95rem;
+  padding: .8rem 1.4rem;
+  border-radius: var(--r-md);
+  border: 1px solid transparent;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease, color .2s ease;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+.btn--primary { background: var(--ink); color: #fff; }
+.btn--primary:hover { background: #262626; }
+.btn--ghost { background: transparent; color: var(--ink); border-color: var(--border); }
+.btn--ghost:hover { border-color: var(--ink); }
+/* Verde oficial de WhatsApp: el reconocimiento del color es justo lo que
+   hace que este botón se lea como "canal directo" y no como otro CTA más. */
+.btn--whatsapp { background: #25D366; color: #0a0a0a; }
+.btn--whatsapp:hover { background: #1eb855; }
+.contact__wa { margin-top: 22px; width: 100%; }
+/* Variantes sobre fondo oscuro */
+.on-dark .btn--primary { background: #fff; color: var(--ink); }
+.on-dark .btn--primary:hover { background: #e9e9e9; }
+.on-dark .btn--ghost { color: #fff; border-color: var(--border-dark); }
+.on-dark .btn--ghost:hover { border-color: #fff; }
+
+/* ==========================================================================
+   HEADER / sticky menu
+   ========================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,.82);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+.header.is-scrolled { border-color: var(--border); box-shadow: var(--shadow-sm); }
+.header__inner {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -.02em;
+}
+.brand__mark {
+  width: 26px; height: 26px;
+  border-radius: 7px;
+  background: var(--ink);
+  display: grid; place-items: center;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: .9rem;
+}
+
+/* Nav desktop */
+.nav { display: none; }
+.nav__list { display: flex; align-items: center; gap: 1.6rem; }
+.nav__link {
+  position: relative;
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: 0;          /* sin tracking: gana ancho para caber 6 items */
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding-block: 4px;
+  transition: color .18s ease;
+}
+.nav__link[aria-current] { color: var(--accent-strong); }
+/* Hover: sólo cambio de color al verde de la paleta, sin subrayado.
+   Va dentro de (hover: hover) porque en táctil el estado se queda "pegado"
+   tras el toque y el item quedaría verde de forma permanente. */
+@media (hover: hover) {
+  .nav__link:hover { color: var(--accent-strong); }
+}
+
+/* Hamburguesa */
+.hamburger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px; height: 42px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+}
+.hamburger span {
+  display: block;
+  width: 18px; height: 2px;
+  margin-inline: auto;
+  background: var(--ink);
+  transition: transform .25s ease, opacity .2s ease;
+}
+.cabecera.is-abierta .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.cabecera.is-abierta .hamburger span:nth-child(2) { opacity: 0; }
+.cabecera.is-abierta .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Panel móvil */
+.mobile-nav {
+  position: fixed;
+  inset: var(--header-h) 0 auto 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-12px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform .25s ease, opacity .25s ease, visibility .25s;
+  z-index: 49;
+  /* El panel es fixed: lo que se sale de la pantalla NO se alcanza haciendo
+     scroll, porque no participa en el flujo del documento. En un celular en
+     horizontal (667x375) la lista mide 421px contra 311 de espacio útil, y
+     los últimos enlaces quedaban inalcanzables. Acotando la altura al hueco
+     bajo el header, el propio panel scrollea y todos los items se alcanzan.
+     svh y no vh: es la ventana con la barra del navegador DESPLEGADA, el
+     caso chico. Con vh el panel se pasaría justo cuando la barra está afuera.
+     overscroll-behavior evita que al llegar al final se arrastre la página. */
+  max-height: calc(100vh - var(--header-h));
+  max-height: calc(100svh - var(--header-h));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.cabecera.is-abierta .mobile-nav { transform: translateY(0); opacity: 1; visibility: visible; }
+.mobile-nav__list { padding: 12px var(--gutter) 24px; }
+.mobile-nav__list li { border-bottom: 1px solid var(--border); }
+.mobile-nav__list li:last-child { border-bottom: 0; }
+.mobile-nav__link {
+  display: block;
+  padding: 14px 4px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: color .18s ease, transform .18s ease;
+}
+.mobile-nav__link[aria-current] { color: var(--accent-strong); }
+
+/* No tenía ninguna respuesta al hover. Verde de acento + un corrimiento
+   corto: en una lista de ancho completo el desplazamiento se lee mejor que
+   un cambio de color solo. */
+@media (hover: hover) {
+  .mobile-nav__link:hover { color: var(--accent-strong); transform: translateX(6px); }
+}
+/* En táctil no hay hover: :active da la respuesta al toque. */
+.mobile-nav__link:active { color: var(--accent-strong); }
+
+/* Desde 768px el menú va en la cabecera… si cabe. Si sus opciones no caben
+   junto a la marca (js/main.js lo mide; en el editor, la vista previa), se
+   usa la hamburguesa también en pantalla ancha: menú compacto. Mientras se
+   mide, nada se encoge. (Las clases .cabecera, .menu, .hamburguesa y
+   .menu-movil son las que usan el editor y las plantillas.) */
+@media (min-width: 768px) {
+  .nav { display: block; }
+  .hamburger { display: none; }
+}
+.cabecera.menu-compacto .nav { display: none; }
+.cabecera.menu-compacto .hamburger { display: inline-flex; }
+.cabecera.menu-midiendo .cabecera__fila > * { flex-shrink: 0; }
+.cabecera.menu-midiendo .nav__link { white-space: nowrap; }
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero {
+  position: relative;
+  /* Abre a pantalla completa: viewport menos la altura del header sticky.
+     svh evita el salto con la barra del navegador en móvil. */
+  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100svh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-block: 48px 104px;
+}
+/* El h1 se mide contra el CONTENEDOR, no contra la ventana. Es lo que
+   mantiene el título en 3 líneas siempre.
+
+   Por qué: .container salta de width:100% a 90% en 865px, así que el ancho
+   útil se encoge de golpe (824 -> 652). Con una fuente en vw el texto seguía
+   creciendo mientras su caja se encogía, y se apiñaba en 5 líneas de 865px
+   en adelante. En cqw la fuente y su caja van juntas y el salto se absorbe
+   solo — igual que el cambio de --gutter en 1024px. */
+.hero > .container { container-type: inline-size; }
+
+.hero__title {
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: .98;
+  /* Dos declaraciones a propósito, igual que el min-height de .hero: un
+     navegador sin unidades de contenedor (anterior a 2023) descarta la
+     segunda y se queda con la primera. Sin el respaldo caería al h1 por
+     omisión — 32px — y el titular se vería roto. */
+  font-size: clamp(2rem, 11vw, 6.5rem);      /* respaldo */
+  font-size: clamp(2rem, 11.5cqw, 6.5rem);   /* preferido */
+  text-wrap: balance;
+}
+.hero__subtitle {
+  margin: 1.4rem auto 0;
+  max-width: 48ch;
+  font-size: clamp(1.05rem, 4.2vw, 1.5rem);
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+
+/* Par de botones del hero. Mismo patrón que .cta__actions: en móvil angosto
+   se apilan solos (flex-wrap) porque .btn lleva white-space: nowrap. */
+.hero__actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* Ancla "Saber más" — flecha que baja al slider */
+.hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: var(--ink-soft);
+  transition: color .18s ease;
+}
+.hero__scroll:hover { color: var(--ink); }
+.hero__scroll-arrow { animation: heroScrollBounce 1.9s ease-in-out infinite; }
+.hero__scroll-label {
+  font-size: .72rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+@keyframes heroScrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+/* ==========================================================================
+   INTRO / Pregunta (sección entre hero y slider)
+   ========================================================================== */
+.intro {
+  text-align: center;
+  /* Padding contenido: deja respirar la pregunta sin robarle pantalla al
+     slider. ~30px en móvil → ~50px en laptop, escalando con el viewport. */
+  padding-block: clamp(30px, 4.5vw, 52px);
+  background: var(--bg-dark);
+  color: #fff;
+  scroll-margin-top: var(--header-h);
+}
+.intro__title {
+  font-size: clamp(1.5rem, 5.2vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.06;
+  text-wrap: balance;
+}
+.intro__title em { font-style: italic; }
+.intro__subtitle {
+  color: #a3a3a3;
+  /* 2.5vw no es arbitrario: hace que el texto alcance su tamaño máximo justo
+     en 640px, el breakpoint que usa el resto del sitio. La transición termina
+     donde cambia el diseño y no en un número suelto.
+     El piso es 0.9rem (14.4px) y no el 0.77rem que daría la proporción exacta:
+     ese párrafo es texto corrido, y 12.3px en celular no se lee cómodo. */
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  text-wrap: pretty;
+  /* Izquierda en móvil; el justificado se restituye desde 640px (más abajo).
+     A anchos de celular el sobrante se reparte entre pocas palabras y los
+     huecos se notan. Mismo criterio que .faq__a p. */
+  text-align: left;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  }
+
+/* ==========================================================================
+   SLIDER / Galería antes-después
+   ========================================================================== */
+.slider { position: relative; background: var(--bg-dark); overflow: hidden; }
+.slider__viewport { overflow: hidden; }
+.slider__track {
+  display: flex;
+  transition: transform .55s cubic-bezier(.65,.05,.36,1);
+}
+.slide {
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: 1fr;          /* móvil: una columna, una imagen por slide */
+}
+.ba {                                   /* before/after cell */
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: #111;
+}
+.ba image-slot { width: 100%; height: 100%; }
+.ba img { width: 100%; height: 100%; object-fit: cover; }
+
+.ba__tag {
+  position: absolute;
+  left: 50%; bottom: 18px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 18px;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(6px);
+  /*border-radius: var(--r-md);*/
+  text-align: center;
+  width: max-content;
+  max-width: 90%;
+}
+.ba__label {
+  font-size: .68rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/*@media (min-width: 640px) {
+  .ba__tag {
+    width: max-content;
+  }
+}*/
+
+
+.ba__caption { color: #fff; font-size: .92rem; font-style: italic; line-height: normal;}
+
+/* Controles — barra compacta centrada en la parte superior de la imagen.
+   Fondo oscuro translúcido + desenfoque para que los iconos se lean tanto
+   sobre fondos claros como oscuros. */
+/* Móvil (una columna): mismos controles que tablet/desktop —
+   flechas prev/next en los extremos izquierdo y derecho, centradas
+   verticalmente, y play/pausa centrado arriba que aparece al hover.
+   El play se separa del borde superior la misma distancia (12px) que
+   las flechas de sus bordes laterales. */
+.slider__controls {
+  display: contents;          /* los botones se posicionan solos sobre la imagen */
+}
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,.28);
+  background: rgba(255,255,255,.12);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  z-index: 7;
+  transition: background .18s ease;
+}
+.slider__btn svg { width: 16px; height: 16px; }
+.slider__btn:hover { background: rgba(255,255,255,.28); }
+.slider__btn--prev { left: 12px; }
+.slider__btn--next { right: 12px; }
+
+.slider__play {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,.4);
+  background: rgba(0,0,0,.45);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  z-index: 7;
+  opacity: 0;
+  transition: opacity .2s ease, background .2s ease;
+}
+.slider__play svg { width: 16px; height: 16px; }
+.slider:hover .slider__play { opacity: 1; }
+.slider__play:hover { background: rgba(0,0,0,.7); }
+/* Móvil (una columna): se omiten los dots — son demasiados y resultan
+   redundantes. Reaparecen a partir de tablet (≥640px). */
+.slider__dots {
+  display: none;
+  position: absolute;
+  left: 50%; bottom: 14px;
+  transform: translateX(-50%);
+  gap: 8px;
+  z-index: 5;
+}
+.slider__dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: 0;
+  padding: 0;
+  background: rgba(255,255,255,.4);
+  transition: background .2s ease, width .2s ease;
+}
+.slider__dot.is-active { background: var(--accent); width: 22px; border-radius: 4px; }
+
+/* ==========================================================================
+   CARD GRID / Cómo funciona
+   ========================================================================== */
+/* Alineación a la izquierda en móvil, centrada de 640px en adelante.
+   Al ser una hoja mobile-first, el estilo base ES el de móvil: por eso va
+   'left' aquí y el centrado se restituye en el @media de abajo, en vez de
+   añadir una consulta max-width —el archivo no tiene ninguna activa—. */
+.steps__head { max-width: 46rem; margin-inline: auto; text-align: left; }
+.steps__title {
+  font-size: clamp(1.8rem, 6vw, 2.9rem);
+  font-weight: 800;
+  letter-spacing: -.025em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+.steps__lead {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: clamp(1rem, 3vw, 1.12rem);
+  text-wrap: pretty;
+}
+.cards {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--bg);
+  box-shadow: 0 1px 3px rgba(0,0,0,.05), 0 14px 30px -16px rgba(0,0,0,.18);
+}
+.card {
+  padding: 32px 28px;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  transition: background .2s ease;
+}
+.card:hover { background: var(--bg-alt); }
+/* Retícula base (móvil): 1 columna × 6 líneas — solo separadores horizontales */
+.card { border-left: 0; }
+.card:nth-child(1) { border-top: 0; }
+.card__icon {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: var(--r-md);
+  background: var(--ink);
+  color: var(--accent);
+  margin-bottom: 18px;
+}
+.card__num {
+  font-size: .72rem;
+  text-transform: uppercase;
+  /*letter-spacing: .14em;*/
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+.card__title { margin-top: 4px; font-size: 1.18rem; font-weight: 700; letter-spacing: -.01em; line-height: normal; }
+
+.card__text {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: .96rem;
+  line-height: normal; 
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  }
+.card__price { color: var(--ink); font-weight: 700; }
+
+/* ==========================================================================
+   CTA oscura
+   ========================================================================== */
+.cta { background: var(--bg-dark); color: #fff; text-align: center; }
+.cta__title {
+  /* .cta centra todo su contenido; en móvil este bloque lo revierte. */
+  text-align: left;
+  max-width: 22ch;
+  margin-inline: auto;
+  font-size: clamp(1.8rem, 6.4vw, 3.1rem);
+  font-weight: 800;
+  letter-spacing: -.025em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+.cta__text {
+  text-align: left;
+  margin: 1.1rem auto 0;
+  max-width: 52ch;
+  color: #a3a3a3;
+  font-size: clamp(1rem, 3vw, 1.12rem);
+  text-wrap: pretty;
+}
+.cta__text strong { color: #fff; font-weight: 600; }
+
+/* De tablet en adelante vuelven al centro. Los tres juntos para que el
+   comportamiento se lea de un vistazo y no haya que buscarlo en tres sitios. */
+@media (min-width: 640px) {
+  .steps__head,
+  .cta__title,
+  .cta__text,
+  .faq__title { text-align: center; }
+  .intro__subtitle { text-align: justify; }
+  /* .faq__head lleva max-width pero, a diferencia de .pricing__head y
+     .compare__head, no traía margin-inline. Sin él la caja se pega a la
+     izquierda y el título centrado quedaría descuadrado respecto al resto
+     de los encabezados de sección. */
+  .faq__head { margin-inline: auto; }
+}
+.cta__actions {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+.cta__note { margin-top: 1.4rem; font-size: .8rem; color: #737373; }
+
+/* Cuando los dos botones dejan de caber lado a lado y se apilan, cada uno
+   pasa a ocupar el ancho completo — dos botones de anchos distintos, uno
+   sobre otro y centrados, se ven desalineados.
+
+   El corte no es arbitrario: los botones suman 196 + 14 de separación + 113
+   = 323px, y a 363px de ventana el ancho útil es justo 323. A 362 ya no
+   caben. ⚠️ Si cambias el texto de un botón, este número se mueve: vuelve a
+   medirlo antes de confiar en él.
+
+   flex: 1 0 100% y no width: 100% — con width, ambos botones podrían
+   encogerse hasta caber juntos en un renglón, que es lo contrario de lo
+   que se busca. Con basis 100% y sin encogimiento, cada uno toma su línea. */
+@media (max-width: 362.98px) {
+  .cta__actions > .btn { flex: 1 0 100%; }
+}
+.upload-input { display: none; }
+
+/* ==========================================================================
+   TABLA COMPARATIVA
+   ========================================================================== */
+.compare__head { text-align: center; max-width: 44rem; margin-inline: auto; }
+.compare__title { font-size: clamp(1.7rem, 5.5vw, 2.6rem); font-weight: 800; letter-spacing: -.025em; }
+.compare__lead { margin-top: .7rem; color: var(--muted); }
+.table-wrap {
+  margin-top: 40px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: 0 1px 3px rgba(0,0,0,.05), 0 14px 30px -16px rgba(0,0,0,.18);
+}
+.compare-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+.compare-table th, .compare-table td {
+  padding: 18px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  font-size: .95rem;
+}
+.compare-table thead th { font-size: .9rem; }
+.compare-table tbody th, .compare-table tbody td:first-child { text-align: left; font-weight: 500; color: var(--ink-soft); }
+.compare-table tbody tr:last-child td, .compare-table tbody tr:last-child th { border-bottom: 0; }
+.col-feature { width: 34%; }
+.col-highlight { background: #f0fdf4; position: relative; }
+.compare-table thead .col-highlight { background: #f0fdf4; }
+.col-highlight .pill {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: .66rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+.brand-col { font-weight: 800; letter-spacing: -.01em; font-size: 1.05rem; }
+.check { color: var(--accent-strong); font-weight: 700; }
+.dash { color: #c4c4c4; }
+.depends { color: var(--muted); font-size: .86rem; }
+/* Fila de costo inicial: primera y con mayor peso tipográfico */
+.row-cost th, .row-cost td { font-size: 1.02rem; }
+.compare-table tbody .row-cost th { font-weight: 800; color: var(--ink); }
+.row-cost strong { font-weight: 800; letter-spacing: -.01em; }
+
+/* ==========================================================================
+   PRECIOS
+   ========================================================================== */
+.pricing__head { text-align: center; max-width: 44rem; margin-inline: auto; }
+.pricing__head .eyebrow { color: var(--accent-strong); }
+.pricing__title { margin-top: .5rem; font-size: clamp(1.7rem, 5.5vw, 2.6rem); font-weight: 800; letter-spacing: -.025em; }
+.pricing__lead { margin-top: .7rem; color: var(--muted); }
+
+.pricing__grid {
+  --pricing-gap: 22px;
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--pricing-gap);
+  align-items: stretch;
+}
+/* Varias .pricing__grid seguidas = más hileras de tarjetas. El aire vertical
+   entre hileras iguala al horizontal entre columnas; el margin-top de 44px es
+   la separación de la sección y sólo debe aplicar a la primera. */
+.pricing__grid + .pricing__grid { margin-top: var(--pricing-gap); }
+.price-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  transition: transform .18s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.price-card:hover { border-color: var(--ink); box-shadow: var(--shadow-md); }
+.price-card--featured { border-color: var(--ink); box-shadow: var(--shadow-md); }
+
+.price-card__badge {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--ink);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .38em 1em;
+  border-radius: 999px;
+}
+/* Sin texto de insignia en el CMS: no se muestra la píldora vacía */
+.price-card__badge:empty { display: none; }
+.price-card__name {
+  /* Medidas de la píldora del selector. Viven aquí, en el padre, porque las
+     usan dos reglas: el <select> para su borde y relleno, y el título de la
+     otra tarjeta para compensar ese mismo alto. Si cambia una, cambian ambas. */
+  --plazo-borde: 2px;
+  --plazo-relleno-y: .22em;
+  font-size: 1.5rem; font-weight: 800; letter-spacing: -.02em;
+}
+.price-card__desc { margin-top: .3rem; color: var(--muted); font-size: .95rem; min-height: calc(1.45em * 4); }
+/* Selector de plazo: ocupa el lugar y el estilo del nombre del plan, pero es
+   un control. El <select> hereda la tipografía del <h3> que lo envuelve, así
+   que si cambia .price-card__name el selector lo sigue solo. La flecha se
+   dibuja en el ::after del <h3> —no en el select— para poder usar currentColor
+   y evitar un SVG embebido. */
+/* El <select> ES la píldora: el borde, el fondo blanco y el bloque verde de la
+   flecha se dibujan sobre él mismo. Antes el bloque verde era un ::after del
+   <h3>, y eso tenía dos fallos: el hover sólo valía sobre el texto y hacer clic
+   en la flecha no abría nada, porque un pseudo-elemento no es parte del
+   control. Las medidas van en em para escalar con la tipografía del título. */
+.price-card__name--selector { display: inline-flex; }
+.price-card__plazo {
+  --plazo-verde: var(--accent-strong);
+  font: inherit; color: inherit; letter-spacing: inherit;
+  margin: 0; padding: var(--plazo-relleno-y) 2.5em var(--plazo-relleno-y) .55em;
+  border: var(--plazo-borde) solid var(--plazo-verde);
+  border-radius: var(--r-md);
+  background-color: var(--bg);
+  /* Dos capas: la flecha encima, el bloque verde debajo. origin en border-box
+     para que el verde llegue hasta el borde y el redondeo lo recorte limpio. */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1.6 1.8 6 6.2l4.4-4.4' fill='none' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"),
+    linear-gradient(var(--plazo-verde), var(--plazo-verde));
+  background-repeat: no-repeat, no-repeat;
+  background-position: right .78em center, right center;
+  background-size: .46em auto, 2em 100%;
+  background-origin: border-box, border-box;
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+  cursor: pointer;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+/* El sistema no trae un tono de hover para el acento, así que éste vive sólo
+   aquí. Borde y bloque leen la misma variable, de modo que oscurecen a la vez. */
+.price-card__plazo:hover { --plazo-verde: #12833c; box-shadow: 0 2px 12px rgba(22, 163, 74, .3); }
+.price-card__plazo:active { box-shadow: 0 1px 4px rgba(22, 163, 74, .35); }
+/* Sin contorno negro: el foco se marca con un halo del verde claro del sistema,
+   y sólo con :focus-visible, así que al abrirlo con el ratón no aparece. */
+.price-card__plazo:focus { outline: none; }
+.price-card__plazo:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
+.price-card__price { margin-top: 1.4rem; display: flex; align-items: baseline; gap: .15rem; }
+.price-card__amount { font-size: clamp(2.4rem, 8vw, 3rem); font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+.price-card__billed { margin-top: .35rem; color: var(--muted); font-size: .88rem; }
+.pricing__notes { margin-top: 28px; color: var(--ink-soft); font-size: .9rem; max-width: 46rem; margin-inline: auto; text-wrap: pretty; text-align: left }
+.pricing__foot { margin-top: 14px; text-align: center; color: var(--muted); font-size: .84rem; max-width: 44rem; margin-inline: auto; text-wrap: pretty; }
+/* Mismo tratamiento de enlace en línea que .faq__a y .legal-prose: acento +
+   subrayado. Se extiende a .pricing__notes en vez de duplicar la regla, para
+   que el patrón siga viviendo en un solo lugar. */
+/* Ligas dentro de texto corrido. Un solo lugar para todas: si cambia el
+   tratamiento, cambia aquí y no en tres reglas repartidas por el archivo. */
+.pricing__foot a,
+.pricing__notes a,
+.steps__lead a,
+.faq__a a { color: var(--accent-strong); text-decoration: none; transition: color .18s ease; }
+.pricing__foot a:hover,
+.pricing__notes a:hover,
+.steps__lead a:hover,
+.faq__a a:hover { color: var(--ink); }
+
+/* Notas al pie: un párrafo corrido ("1. … 2. … 3. …") en el que cada nota es
+   un <span> (se edita aparte en el panel) y la CSS pone su número. */
+.section--notes > .container { padding: unset; }
+.general__notes { counter-reset: nota; margin: 0 auto; color: var(--ink-soft); font-size: .7rem; text-wrap: pretty; text-align: left }
+.general__notes > span { counter-increment: nota; }
+.general__notes > span::before { content: counter(nota) ". "; }
+.general__notes > span + span::before { content: " " counter(nota) ". "; }
+
+@media (min-width: 640px) {
+    .pricing__notes {text-align: center; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto;}
+    /* text-align-last: la última línea siempre a la izquierda (algunos navegadores la
+       estiraban en la vista previa del panel). */
+    .general__notes {text-align: justify; text-align-last: start; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto;}  
+}
+
+/* ==========================================================================
+   PREGUNTAS FRECUENTES — acordeón nativo (details/summary)
+   ========================================================================== */
+.faq { scroll-margin-top: var(--header-h); }
+.faq__head { max-width: 44rem; }
+.faq__head .eyebrow { color: var(--accent-strong); }
+.faq__title { font-size: clamp(1.6rem, 5vw, 2.3rem); font-weight: 800; letter-spacing: -.025em; text-wrap: balance; }
+.faq__list { margin-top: 36px; border-top: 1px solid var(--border); }
+.faq__item { border-bottom: 1px solid var(--border); }
+.faq__q { display: grid; grid-template-columns: 2.6rem 1fr 1.5rem; align-items: start; gap: .4rem; padding: 20px 2px; cursor: pointer; list-style: none; font-weight: 700; font-size: 1.02rem; letter-spacing: -.01em; text-wrap: pretty; transition: color .18s ease; }
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q:hover { color: var(--accent-strong); }
+.faq__num { font-size: .72rem; letter-spacing: .14em; font-weight: 700; color: var(--accent-strong); padding-top: .32rem; }
+.faq__sign { position: relative; width: 1.5rem; height: 1.5rem; justify-self: end; }
+.faq__sign::before, .faq__sign::after { content: ""; position: absolute; top: 50%; left: 50%; width: 13px; height: 1px; background: currentColor; transform: translate(-50%, -50%); transition: transform .22s ease, opacity .22s ease; }
+.faq__sign::after { transform: translate(-50%, -50%) rotate(90deg); }
+.faq__item[open] .faq__sign::after { transform: translate(-50%, -50%) rotate(0deg); opacity: 0; }
+.faq__item[open] .faq__q { color: var(--muted); }
+/* Despliegue suave: se anima la altura del contenido del <details>.
+   interpolate-size habilita la transición hacia/desde height:auto.
+
+   Acordeón exclusivo: los <details> comparten name="faq" en el HTML, que
+   los agrupa como botones de radio — abrir uno cierra el que estuviera
+   abierto. Es comportamiento nativo del navegador, sin JavaScript.
+   En navegadores que no lo soporten, el atributo se ignora sin error y se
+   vuelve al comportamiento anterior: varios abiertos a la vez. */
+:root { interpolate-size: allow-keywords; }
+.faq__item::details-content { height: 0; overflow: hidden; opacity: 0; transition: height .38s cubic-bezier(.2,.7,.3,1), opacity .28s ease, content-visibility .38s allow-discrete; }
+.faq__item[open]::details-content { height: auto; opacity: 1; }
+.faq__a { padding: 0 1.5rem 24px 2.6rem; }
+/* Justificado con partición automática: en texto justificado SIN guiones se
+   abren "ríos" de espacio entre palabras. hyphens:auto lo evita, y funciona
+   porque el documento declara lang="es" — sin eso el navegador no sabe qué
+   diccionario aplicar y la propiedad no hace nada. */
+.faq__a p {
+  color: var(--ink-soft);
+  font-size: .96rem;
+  /* Izquierda en móvil, justificado de 640px en adelante. A 375px la respuesta
+     mide 269px: unos 27 caracteres por línea, y ahí justificar reparte el
+     sobrante entre tres o cuatro palabras, abriendo huecos muy visibles.
+     El justificado necesita medida; sin ella estorba. */
+  text-align: left;
+  -webkit-hyphens: auto;   /* Safari lo sigue necesitando */
+  hyphens: auto;
+  text-wrap: pretty;
+}
+@media (min-width: 640px) {
+  .faq__q { font-size: 1.1rem; grid-template-columns: 3.2rem 1fr 1.5rem; }
+  .faq__a { padding-left: 3.2rem; padding-right: 4rem; }
+  /* El justificado va aquí y no en el @media de arriba: aquél precede a la
+     regla base de .faq__a p y, a igual especificidad, ganaba el text-align:left
+     por ir después en el archivo. */
+  .faq__a p { font-size: 1rem; text-align: justify; }
+}
+.price-card__period { color: var(--muted); font-size: 1rem; font-weight: 500; }
+
+.price-card__features { margin-top: 1.6rem; display: grid; gap: .5rem; align-content: start; flex: 1 1 auto; }
+.price-card__features li {
+  position: relative;
+  padding-left: 1.7rem;
+  color: var(--ink-soft);
+  font-size: .96rem;
+  line-height: 1.3;
+}
+.price-card__features li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .12em;
+  width: 1.1rem; height: 1.1rem;
+  background: no-repeat center / contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316a34a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+}
+.price-card__cta { margin-top: auto; padding-top: 0; }
+.price-card__features + .price-card__cta { margin-top: 2rem; }
+.price-card__cta { display: flex; align-items: center; justify-content: center; width: 100%; text-align: center; margin-top: auto; padding-top: 2rem; line-height: 1; padding-block: .9rem; }
+
+@media (min-width: 640px) {
+  .pricing__grid { --pricing-gap: 24px; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(5, auto); gap: var(--pricing-gap); }
+  /* subgrid: alinea precio / facturación / viñetas / botón entre tarjetas sin importar el largo de
+     la descripción. Activo en todo el rango de 2 columnas (≥640px), hasta que colapsan a 1 (<640px).
+     El span debe igualar el número de hijos de .price-card (head, price, billed, features, cta). */
+  .price-card { display: grid; grid-template-rows: subgrid; grid-row: span 5; row-gap: 0; }
+  .price-card__desc { min-height: 0; }
+  /* Línea base: el título sin selector baja lo que el borde y el relleno de la
+     píldora empujan al texto del otro, de modo que ambas líneas base coincidan.
+     Va aquí dentro y no en la regla base porque sólo tiene sentido mientras las
+     tarjetas van lado a lado; apiladas en móvil no hay nada que alinear. */
+  .price-card__name:not(.price-card__name--selector) {
+    padding-top: calc(var(--plazo-borde) + var(--plazo-relleno-y));
+  }
+}
+@media (min-width: 1024px) {
+  .pricing__grid { max-width: 720px; margin-inline: auto; } /* 2 planes centrados en escritorio. Para volver a 3: descomentar Enterprise en index.html, poner repeat(3,1fr) y quitar este max-width. */
+}
+
+/* Notas numeradas bajo la tabla — sangría francesa (número a la izquierda,
+   texto indentado). Se oculta en móvil. */
+
+.note {
+  font-size: x-small;  
+  font-variant-position: super;  
+  font-weight: 300;
+  line-height: 0;
+  }
+
+.note--subheader {
+  font-size: x-small;  
+  font-variant-position: super;  
+  font-weight: 600;
+  line-height: 0;
+  }
+
+.note--black {
+  font-size: small;
+  font-variant-position: super;  
+  font-weight: 800;
+  line-height: 0;
+  }
+
+.note--medium {
+  font-size: x-small;
+  font-variant-position: super;  
+  font-weight: 800;
+  line-height: 0;
+  }
+
+@media (min-width: 640px) {
+.note--black {
+  font-size: medium;
+  }
+.note--subheader {
+  font-size: small;
+  }
+}
+/* ==========================================================================
+   CONTACTO
+   ========================================================================== */
+.contact__grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+/* Orden visual en todos los breakpoints: formulario primero (izquierda en dos
+   columnas, arriba en móvil) e info después, cerrando con el botón de WhatsApp. */
+#contactForm { order: 1; }
+.contact__info { order: 2; }
+.contact__title { font-size: clamp(1.8rem, 6vw, 2.8rem); font-weight: 800; letter-spacing: -.025em; line-height: 3rem;}
+.contact__lead { margin-top: .8rem; color: var(--muted); max-width: 40ch; text-wrap: pretty; }
+.contact__list { margin-top: 28px; display: grid; gap: 20px; }
+.contact__item { display: flex; gap: 14px; align-items: flex-start; }
+.contact__ico {
+  flex: 0 0 auto;
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  color: var(--ink);
+  position: relative;
+  top: 8px;
+  }
+.contact__k { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.contact__v { font-size: .98rem; color: var(--ink); }
+
+.form { display: grid; gap: 18px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 28px; }
+.field { display: grid; gap: 7px; }
+.field label { font-size: .85rem; font-weight: 600; }
+.field .req { color: var(--accent-strong); }
+.field input, .field textarea, .field select {
+  width: 100%;
+  font: inherit;
+  font-size: .95rem;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg);
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.field input:focus, .field textarea:focus, .field select:focus {
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(10,10,10,.08);
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23767676' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+.form__foot { font-size: .78rem; color: var(--muted); }
+
+/* Dropzone de subida de foto */
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+  padding: 26px 18px;
+  border: 1.5px dashed var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg-alt);
+  cursor: pointer;
+  transition: border-color .18s ease, background .18s ease, color .18s ease;
+}
+.dropzone:hover { border-color: var(--ink); background: #f4f4f4; }
+.dropzone.is-dragover { border-color: var(--accent-strong); background: #f0fdf4; }
+.dropzone__icon { color: var(--ink); }
+.dropzone__text { font-size: .95rem; color: var(--ink-soft); }
+.dropzone__text strong { color: var(--ink); font-weight: 600; }
+.dropzone__hint { font-size: .78rem; color: var(--muted); }
+
+.dropzone__preview {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--bg);
+}
+.dropzone__preview img {
+  width: 56px; height: 56px;
+  object-fit: cover;
+  border-radius: var(--r-sm);
+  flex: 0 0 auto;
+}
+.dropzone__thumb {
+  position: relative;
+  flex: 0 0 auto;
+  width: 56px; height: 56px;
+  border-radius: var(--r-sm);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: var(--muted);
+}
+.dropzone__thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+.dropzone__thumb.is-loaded img { opacity: 1; }
+.dropzone__file { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.dropzone__name {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dropzone__remove {
+  align-self: flex-start;
+  padding: 0;
+  background: none;
+  border: 0;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+.form .btn--primary { width: 100%; padding-block: .95rem; }
+/* El aviso de éxito se retiró: al enviar, el formulario redirige a
+   confirmation.html con el folio. Un solo mecanismo, no dos. */
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer { border-top: 1px solid var(--border); padding-block: 56px 32px; }
+.footer__grid { display: grid; grid-template-columns: 1fr; gap: 36px; }
+.footer__brand .brand { margin-bottom: 14px; }
+.footer__about { color: var(--muted); font-size: .92rem; max-width: 34ch; }
+.footer__col h4 { font-size: .82rem; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; font-weight: 600; }
+.footer__col li { margin-bottom: 10px; }
+.footer__col a { font-size: .95rem; color: var(--ink-soft); transition: color .15s ease; }
+.footer__col a:hover { color: var(--ink); }
+.footer__bottom {
+  /*margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);*/
+  text-align: center;
+  color: var(--muted);
+  font-size: .82rem;
+}
+.footer__sep { margin-inline: .35em; opacity: .5; }
+.footer__legal { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; transition: color .15s ease; }
+.footer__legal:hover { color: var(--ink); }
+
+/* ==========================================================================
+   LEGAL / Páginas de texto (Aviso de Privacidad, Términos, etc.)
+   Mobile-first · medida de lectura cómoda · usa los mismos tokens
+   ========================================================================== */
+.legal-hero {
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+  padding-block: 52px 40px;
+}
+.legal-hero .eyebrow { color: var(--accent-strong); }
+.legal__title {
+  margin-top: .7rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.02;
+  font-size: clamp(2.1rem, 7vw, 3.4rem);
+  text-wrap: balance;
+}
+.legal__updated {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .82rem;
+  color: var(--muted);
+}
+.legal__updated::before {
+  content: "";
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.legal-body { padding-block: 48px 80px; }
+.legal-prose {
+  max-width: 760px;
+  margin-inline: auto;
+}
+.legal-prose .legal-intro {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+.legal-prose .legal-intro strong { color: var(--ink); font-weight: 600; }
+
+.legal-section { margin-top: 2.6rem; }
+.legal-section:first-of-type { margin-top: 2.4rem; }
+.legal-section + .legal-section { padding-top: 2.6rem; border-top: 1px solid var(--border); }
+.legal-section h2 {
+  display: flex;
+  align-items: baseline;
+  gap: .7rem;
+  font-size: clamp(1.2rem, 3.6vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -.015em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.legal-section h2 .legal__num {
+  flex: 0 0 auto;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+  border-radius: 6px;
+  padding: .3em .7em;
+  transform: translateY(-.18em);
+}
+/* Tablet/desktop: sube un par de píxeles el chip del número respecto al baseline */
+@media (min-width: 640px) {
+  .legal-section h2 .legal__num { transform: translateY(calc(-.18em - 2px)); }
+}
+.legal-section > p,
+.legal-list > li {
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+.legal-section > p { margin-top: 1rem; }
+
+.legal-list { margin-top: 1rem; display: grid; gap: .8rem; }
+.legal-list > li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+.legal-list > li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .62em;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.legal-sublist { margin-top: .7rem; display: grid; gap: .6rem; }
+.legal-sublist > li {
+  position: relative;
+  padding-left: 1.3rem;
+  color: var(--muted);
+  font-size: .96rem;
+  text-wrap: pretty;
+}
+.legal-sublist > li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .62em;
+  width: 8px; height: 2px;
+  background: var(--border-dark);
+  opacity: .55;
+}
+.legal-list strong,
+.legal-sublist strong { color: var(--ink); font-weight: 600; }
+.legal-prose a { color: var(--accent-strong); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.legal-prose a:hover { color: var(--ink); }
+
+.legal-callout {
+  margin-top: 1.2rem;
+  padding: 16px 18px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  font-size: .96rem;
+  color: var(--ink-soft);
+  text-wrap: pretty;
+}
+.legal-contact {
+  margin-top: 1.2rem;
+  display: grid;
+  gap: .4rem;
+  padding: 18px 20px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--r-md);
+}
+.legal-contact span { font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; color: var(--accent); }
+.legal-contact a { color: #fff; }
+.legal-back {
+  margin-top: 3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 600;
+  font-size: .92rem;
+  color: var(--ink);
+}
+.legal-back:hover { color: var(--accent-strong); }
+
+/* ==========================================================================
+   BREAKPOINTS
+   ========================================================================== */
+
+/* —— Tablet ≥ 640px —— */
+@media (min-width: 640px) {
+  .section { padding-block: 80px; }
+  .slide { grid-template-columns: 1fr 1fr; }   /* antes/después en 2 columnas */
+
+  .section--notes {
+    padding-block: unset;
+    padding: 30px;
+    }  
+  
+  /* Dos columnas (tablet/desktop): se recuperan los controles originales —
+     flechas grandes a los lados y play/pausa centrado que aparece al hover.
+     La barra compacta superior solo aplica al layout de una columna (móvil). */
+  .slider__controls {
+    display: contents;          /* deshace la barra: los botones vuelven a posicionarse solos */
+  }
+  .slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px; height: 46px;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.28);
+    z-index: 5;
+    transition: background .2s ease;
+  }
+  .slider__btn:hover { background: rgba(255,255,255,.28); }
+  .slider__btn--prev { left: 14px; }
+  .slider__btn--next { right: 14px; }
+  .slider__btn svg { width: 18px; height: 18px; }
+
+  .slider__play {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 54px; height: 54px;
+    background: rgba(0,0,0,.45);
+    border: 1px solid rgba(255,255,255,.4);
+    z-index: 6;
+    opacity: 0;
+    transition: opacity .2s ease, background .2s ease;
+  }
+  .slider:hover .slider__play { opacity: 1; }
+  .slider__play:hover { background: rgba(0,0,0,.7); }
+  .slider__play svg { width: 20px; height: 20px; }
+  .slider__dots { display: flex; bottom: 5px; }   /* ≥640px: vuelven los dots, más abajo para no encimar con .ba__tag */
+  /* Tablet: 2 columnas × 3 líneas */
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .card { border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
+  .card:nth-child(2n+1) { border-left: 0; }
+  .card:nth-child(-n+2) { border-top: 0; }
+  .contact__grid { grid-template-columns: 1fr 1fr; align-items: start; }
+  .footer__grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
+}
+
+/* —— Laptop ≥ 1024px —— */
+@media (min-width: 1024px) {
+  :root { --header-h: 72px; --gutter: 32px; }
+  .hero { padding-block: 56px 116px; }
+  .section { padding-block: 100px; }
+  .section--notes {
+    padding-block: unset;
+    padding: 30px;
+    }    
+  .ba { aspect-ratio: 1 / 1; }
+  /* Laptop/desktop: 3 columnas × 2 líneas */
+  .cards { grid-template-columns: repeat(3, 1fr); }
+  .card { border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
+  .card:nth-child(2n+1) { border-left: 1px solid var(--border); }
+  .card:nth-child(3n+1) { border-left: 0; }
+  .card:nth-child(-n+3) { border-top: 0; }
+}
+
+/* —— Desktop ≥ 1280px —— */
+@media (min-width: 1280px) {
+  .hero { padding-block: 64px 120px; }
+}
+
+/* ==========================================================================
+   GALERÍA / Portafolio — retícula full-bleed
+   2 columnas en móvil · 4 columnas de tablet (≥640px) en adelante
+   ========================================================================== */
+.gallery { background: var(--bg); scroll-margin-top: var(--header-h); }
+.gallery__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+.gallery__item { position: relative; display: block; aspect-ratio: 1 / 1; overflow: hidden; background: var(--bg-alt); -webkit-tap-highlight-color: transparent; }
+.gallery__item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .55s cubic-bezier(.2,.7,.3,1), filter .3s ease; }
+.gallery__item:hover img { transform: scale(1.045); }
+.gallery__item:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: -3px; }
+@media (min-width: 640px) { .gallery__grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* ==========================================================================
+   FANCYBOX / Lightbox — "página virtual" sobre la página real
+   ========================================================================== */
+/* Bloqueo del scroll del documento (el body se fija conservando posición) */
+html.fbx-lock { overflow: hidden; }
+html.fbx-lock body { position: fixed; width: 100%; overflow: hidden; }
+
+.fbx { position: fixed; inset: 0; z-index: 1200; display: none; --fbx-pad: clamp(14px, 5vw, 72px); --fbx-imgw: min(calc(100vw - 2 * var(--fbx-pad)), calc(100vh - 2 * var(--fbx-pad))); }
+.fbx.is-open { display: block; }
+.fbx__overlay { position: absolute; inset: 0; background: rgba(10, 10, 10, .75); animation: fbxFade .2s ease; }
+/* Única zona con scroll mientras el lightbox está abierto */
+.fbx__scroll { position: absolute; inset: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.fbx__frame { min-height: 100%; display: flex; align-items: center; justify-content: center; padding: var(--fbx-pad); box-sizing: border-box; }
+/* Contenedor que se ajusta EXACTAMENTE al tamaño de la imagen: sirve de
+   referencia de posicionamiento para las flechas (centrado vertical real). */
+.fbx__stage { position: relative; width: 100%; height: fit-content; margin: auto; }
+.fbx__img { display: block; width: 100%; height: auto; background: #000; opacity: 0; transform: scale(.985); transition: opacity .28s ease, transform .28s ease; box-shadow: 0 34px 80px -22px rgba(0, 0, 0, .8); }
+.fbx__img.is-ready { opacity: 1; transform: none; }
+.fbx__btn { position: fixed; z-index: 2; display: grid; place-items: center; border: 0; background: transparent; color: rgba(255, 255, 255, .72); cursor: pointer; transition: color .18s ease, transform .18s ease; }
+.fbx__btn:hover { color: #fff; }
+.fbx__btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* Flechas DENTRO del área de la imagen, separadas de su borde por la misma
+   distancia que el margen del recuadro. */
+.fbx__btn--prev, .fbx__btn--next { top: 50%; transform: translateY(-50%); width: 56px; height: 110px; color: #fff; filter: drop-shadow(0 1px 6px rgba(0, 0, 0, .55)); }
+/* Modo única imagen: las flechas viven DENTRO de .fbx__stage, así que su 50%
+   es la mitad exacta de la imagen (se desplazan con ella al hacer scroll). */
+.fbx:not(.fbx--stack) .fbx__btn--prev,
+.fbx:not(.fbx--stack) .fbx__btn--next,
+.fbx:not(.fbx--stack) .fbx__btn--close { position: absolute; }
+/* Trazo homologado a 1px visual: el stroke-width se compensa por la escala
+   a la que se rinde cada svg (44px → 0.545; 30px → 0.8 sobre viewBox de 24). */
+.fbx:not(.fbx--stack) .fbx__btn--prev svg,
+.fbx:not(.fbx--stack) .fbx__btn--next svg { width: 44px; height: 44px; stroke-width: 0.545; }
+.fbx:not(.fbx--stack) .fbx__btn--close svg { stroke-width: 0.8; }
+.fbx--stack .fbx__btn--prev svg,
+.fbx--stack .fbx__btn--next svg { stroke-width: 0.8; }
+.fbx__btn--prev:hover, .fbx__btn--next:hover { transform: translateY(-50%) scale(1.12); }
+/* Inset = el mismo margen del recuadro (--fbx-pad), medido desde el borde de
+   la imagen al GLIFO (−21px descuenta el aire del botón y del viewBox del svg). */
+.fbx:not(.fbx--stack) .fbx__btn--prev { left: calc(var(--fbx-pad) - 21px); right: auto; }
+.fbx:not(.fbx--stack) .fbx__btn--next { right: calc(var(--fbx-pad) - 21px); left: auto; }
+.fbx__btn--close { top: 12px; right: 12px; width: 46px; height: 46px; border-radius: 999px; }
+.fbx__btn--close:hover { transform: scale(1.1); }
+/* Modo única imagen: cerrar centrado sobre la imagen, a --fbx-pad de su
+   borde superior (−14px descuenta el aire del botón y del viewBox). */
+.fbx:not(.fbx--stack) .fbx__btn--close { top: calc(var(--fbx-pad) - 14px); right: auto; left: 50%; transform: translateX(-50%); color: #fff; filter: drop-shadow(0 1px 6px rgba(0, 0, 0, .55)); }
+.fbx:not(.fbx--stack) .fbx__btn--close:hover { transform: translateX(-50%) scale(1.1); }
+.fbx__counter { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 2; font-size: .78rem; letter-spacing: .1em; font-weight: 700; color: rgba(255, 255, 255, .65); pointer-events: none; }
+@keyframes fbxFade { from { opacity: 0; } to { opacity: 1; } }
+
+/* —— Modo COLUMNA (solo móvil): serie completa apilada a todo lo ancho —— */
+.fbx--stack .fbx__frame { display: block; padding: 0; }
+.fbx--stack .fbx__img { width: 100%; box-shadow: none; aspect-ratio: 1 / 1; height: auto; }
+/* Flechas arriba y abajo, centradas, fixed */
+.fbx--stack .fbx__btn--prev,
+.fbx--stack .fbx__btn--next { left: 50%; right: auto; width: 92px; height: 44px; }
+.fbx--stack .fbx__btn--prev { top: var(--fbx-pad); bottom: auto; transform: translateX(-50%) rotate(90deg); }
+.fbx--stack .fbx__btn--next { top: auto; bottom: var(--fbx-pad); transform: translateX(-50%) rotate(90deg); }
+.fbx--stack .fbx__btn--prev, .fbx--stack .fbx__btn--next { height: 44px; }
+.fbx--stack .fbx__btn--prev:hover { transform: translateX(-50%) rotate(90deg) scale(1.12); }
+.fbx--stack .fbx__btn--next:hover { transform: translateX(-50%) rotate(90deg) scale(1.12); }
+.fbx--stack .fbx__counter { left: var(--fbx-pad); bottom: auto; top: 18px; transform: none; }
+
+/* Respeta usuarios con reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+  .hero__scroll-arrow { animation: none; }
+}
+
+/* ==========================================================================
+   SERVICIOS — página de qué incluye el plan y servicios adicionales
+   Mobile-first: las tablas colapsan a lista de dos líneas por debajo de 640px
+   ========================================================================== */
+.svc__head { max-width: 46rem; }
+.svc__head .eyebrow { color: var(--accent-strong); }
+.svc__title { margin-top: .5rem; font-size: clamp(1.6rem, 5.2vw, 2.4rem); font-weight: 800; letter-spacing: -.025em; text-wrap: balance; }
+.svc__lead { margin-top: .7rem; color: var(--muted); text-wrap: pretty; }
+
+/* Bloque A — texto simple con ícono de viñeta (mismo tono que la página legal) */
+.svc-included__list { margin-top: 40px; max-width: 62rem; display: grid; gap: 34px; }
+.svc-item { display: grid; grid-template-columns: 2.6rem 1fr; gap: 0 .9rem; align-items: start; }
+.svc-item__icon { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: var(--r-md); color: var(--accent-strong); }
+.svc-item__title { font-size: 1.14rem; font-weight: 700; letter-spacing: -.015em; padding-top: .42rem; text-wrap: balance; }
+.svc-item__text { margin-top: .6rem; color: var(--ink-soft); font-size: 1rem; line-height: 1.62; text-wrap: pretty; }
+
+/* Bloque B — grupos con tabla */
+.svc-groups { margin-top: 40px; display: grid; gap: 44px; }
+.svc-group__title { font-size: 1.3rem; font-weight: 700; letter-spacing: -.02em; line-height: 1.2; padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
+.svc-group__note { margin-top: .7rem; color: var(--muted); font-size: .88rem; font-style: italic; text-wrap: pretty; }
+.svc-table { width: 100%; margin-top: 4px; border-collapse: collapse; }
+.svc-table thead { display: none; }
+.svc-table tbody tr { display: grid; gap: 2px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.svc-table tbody th { text-align: left; font-weight: 500; color: var(--ink-soft); font-size: .96rem; text-wrap: pretty; }
+.svc-table__price { text-align: left; font-weight: 700; color: var(--ink); font-size: .96rem; letter-spacing: -.01em; white-space: nowrap; }
+.svc-table .note { color: var(--accent-strong); font-weight: 700; font-size: .68em; }
+
+/* Bloque C — notas al pie */
+.svc-notes-sec { padding-block: 56px 72px; }
+.svc-notes { max-width: 52rem; display: grid; gap: .8rem; margin-top: 14px; }
+.svc-notes li { color: var(--muted); font-size: .84rem; line-height: 1.55; text-wrap: pretty; text-align: justify; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; hyphens: auto; }
+.svc-notes .note { color: var(--accent-strong); font-weight: 700; }
+.svc-callout { margin-top: 0; max-width: 52rem; padding: 18px 20px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: var(--r-md); color: var(--ink-soft); font-size: .95rem; text-wrap: pretty; }
+.svc-callout strong { color: var(--ink); font-weight: 700; }
+
+@media (min-width: 640px) {
+  /* Tablet: la tabla recupera su forma tabular */
+  .svc-table thead { display: table-header-group; }
+  .svc-table thead th { padding: 12px 0 8px; text-align: left; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--border); }
+  .svc-table thead th.svc-table__price { text-align: right; }
+  .svc-table tbody tr { display: table-row; }
+  .svc-table tbody th { padding: 15px 24px 15px 0; border-bottom: 1px solid var(--border); }
+  .svc-table tbody td { padding: 15px 0; border-bottom: 1px solid var(--border); text-align: right; }
+  .svc-table tbody tr:first-child th, .svc-table tbody tr:first-child td { padding-top: 16px; }
+  .svc-table tbody tr:last-child th, .svc-table tbody tr:last-child td { border-bottom: 0; }
+  .svc-groups { gap: 52px; }
+  .svc-notes-sec { padding-block: 72px; }
+  /*.svc-notes { margin-top: 48px; }*/
+}
+
+/* —— Laptop ≥1024px: una sola columna con márgenes amplios —— */
+@media (min-width: 1024px) {
+  .svc__head, .svc-included__list, .svc-groups, .svc-notes, .svc-callout { max-width: 52rem; margin-inline: auto; }
+  .svc-groups { gap: 64px; }
+  .svc-notes-sec { padding-block: 88px; }
+  .svc-item { grid-template-columns: 3.2rem 1fr; }
+}
+/* —— Desktop ≥1280px: se estrecha un poco más la medida de lectura —— */
+@media (min-width: 1280px) {
+  .svc__head, .svc-included__list, .svc-groups, .svc-notes, .svc-callout { max-width: 56rem; }
+  .svc-groups { gap: 72px; }
+}
+
+
+
+/* ==========================================================================
+   CARDS — «Cómo funciona» (.cards--trio)
+   Sigue la retícula general de .cards: móvil 1 columna, tablet (640px) 2,
+   laptop/desktop (1024px) 3, con filete entre columnas y entre renglones.
+   Las tarjetas se agregan en el editor: con 6 salen 3 × 2 en desktop.
+   (Antes eran 3 fijas en un solo renglón desde 640px.)
+   ========================================================================== */
+
+/* Botones opcionales (portada, llamada a la acción, cómo funciona): un botón
+   sin texto no se publica; si no queda ninguno, tampoco el renglón que los
+   aloja (sin :has() el renglón vacío sólo deja su margen). */
+@supports selector(:has(a)) {
+  .hero__actions:not(:has(a)), .cta__actions:not(:has(a)), .como-funciona__actions:not(:has(a)) { display: none; }
+}
+
+/* ---------- Logos de plataformas (bloque «Plataformas») ----------------
+   Mismas tarjetas y retícula que «Cómo funciona». Cada logo es una máscara
+   (--logo, la pone el build con la imagen de cada tarjeta): se pinta con
+   --logo-color, sin importar el color del SVG. Para cambiar los colores,
+   basta con estas variables. */
+.cards--logos {
+  --logo-color: #666;               /* logo */
+  --logo-color-hover: var(--ink);   /* logo al pasar el cursor por la tarjeta */
+  --logo-nombre-color: var(--ink);  /* nombre */
+}
+.card--logo {
+  position: relative;
+  /* Celda cuadrada; logo, nombre y separación se miden contra su ancho
+     (cqi), así guardan la proporción en desktop, tablet y celular. */
+  aspect-ratio: 1 / 1; container-type: inline-size;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 0; text-align: center;
+}
+.card__logo {
+  /* Proporción del lienzo de los SVG (394 × 315): el dibujo queda a escala */
+  display: block; width: 28cqi; aspect-ratio: 394 / 315;
+  background-color: var(--logo-color);
+  -webkit-mask: var(--logo) center / contain no-repeat;
+          mask: var(--logo) center / contain no-repeat;
+  transition: background-color .2s ease;
+}
+.card__logo-nombre { margin-top: 5cqi; font-size: clamp(15px, 6.2cqi, 26px); font-weight: 400; letter-spacing: -.005em; line-height: 1.2; color: var(--logo-nombre-color); }
+/* Con enlace, toda la tarjeta lo abre */
+.card--logo a.card__logo-nombre::after { content: ""; position: absolute; inset: 0; }
+.card--logo a.card__logo-nombre:focus-visible { outline: none; }
+.card--logo a.card__logo-nombre:focus-visible::after { outline: 2px solid var(--accent-strong); outline-offset: -4px; border-radius: var(--r-lg); }
+@media (hover: hover) {
+  .card--logo:hover .card__logo { background-color: var(--logo-color-hover); }
+}
+
+/* Celdas vacías del último renglón (p. ej. 3 tarjetas en 2 columnas): se
+   rellenan con ::after (y ::before si faltan dos) con los filetes de una
+   tarjeta, para que la retícula se vea completa. ::before lleva order: 1 para
+   ir después de las tarjetas. Con la retícula completa no aparece ninguno.
+   (Un navegador sin :has() simplemente no los dibuja.)
+   Van en gris claro (--celda-vacia) para que se lean como espacio libre y no
+   como una tarjeta sin texto. */
+.cards { --celda-vacia: var(--border); }
+.cards::before, .cards::after { order: 1; border-left: 1px solid var(--border); border-top: 1px solid var(--border); background: var(--celda-vacia); }
+@supports selector(:has(a)) {
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .cards:has(> .card:nth-child(2n+1):last-child)::after { content: ""; }
+    .cards:has(> .card:only-child)::after { border-top: 0; }
+  }
+  @media (min-width: 1024px) {
+    .cards:has(> .card:nth-child(3n+1):last-child)::before,
+    .cards:has(> .card:nth-child(3n+1):last-child)::after,
+    .cards:has(> .card:nth-child(3n+2):last-child)::after { content: ""; }
+    /* Si faltan en el primer renglón (1 o 2 tarjetas), sin filete arriba */
+    .cards:has(> .card:nth-child(-n+2):last-child)::before,
+    .cards:has(> .card:nth-child(-n+2):last-child)::after { border-top: 0; }
+  }
+}
+
+/* Acciones de la sección "Cómo funciona" — mismo patrón que .hero__actions.
+   El margen superior sigue el padding-block de .section (64 / 80 / 100px) para
+   que el botón quede a la misma distancia de las tarjetas que del borde de la
+   sección siguiente. */
+.como-funciona__actions {
+  margin-top: 51px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+@media (min-width: 640px) { .como-funciona__actions { margin-top: 64px; } }
+@media (min-width: 1024px) { .como-funciona__actions { margin-top: 80px; } }
+
+/* Cierre de sección igual de ajustado que el margen del botón */
+#como-funciona { padding-bottom: 51px; }
+@media (min-width: 640px) { #como-funciona { padding-bottom: 64px; } }
+@media (min-width: 1024px) { #como-funciona { padding-bottom: 80px; } }
+
+/* Contacto: el botón de WhatsApp cierra la columna de info y se alinea con el
+   submit del formulario. La columna se estira a la altura de la fila (stretch)
+   y el margin-top:auto empuja el botón al pie. */
+@media (min-width: 640px) {
+  .contact__grid { align-items: stretch; }
+  /* El 'order' ya está declarado arriba, fuera de la consulta: aplica en todos
+     los anchos y no hace falta repetirlo aquí. */
+  .contact__info { display: flex; flex-direction: column; }
+  /* El submit vive dentro del padding de .form (28px), así que la columna de
+     info se cierra con ese mismo valor para que ambos botones compartan línea
+     base inferior. */
+  .contact__wa { margin-top: auto; margin-bottom: 28px; padding-block: .82rem; }
+}
+
+/* ==========================================================================
+   Plantilla «ortizeta» (consola de GraphicaWeb)
+   ========================================================================== */
+
+/* Color de acento editable (Sitio → Marca → Color de acento): llega como
+   --accent en .sitio. Los otros dos verdes se derivan de él, así cambian
+   juntos; con el verde por defecto (#4ade80) salen prácticamente los de
+   grfkweb (#16a34a y #bbf7d0). Un navegador sin colores relativos conserva
+   los verdes de :root para esos dos. */
+@supports (color: oklch(from red l c h)) {
+  .sitio {
+    --accent-strong: oklch(from var(--accent) calc(l - 0.173) calc(c * 0.93) calc(h - 2.5));
+    --accent-soft:   oklch(from var(--accent) 0.925 calc(c * 0.445) calc(h + 4));
+  }
+}
+
+/* Formulario de contacto: aviso «Mensaje listo» (js/contacto.js). .form
+   lleva display: grid, que le ganaría al atributo hidden. */
+.contacto-form[hidden], .contacto-form__enviado[hidden] { display: none; }
+.contacto-form__enviado { align-content: center; text-align: center; }
+.contacto-form__titulo { font-size: 1.3rem; font-weight: 700; letter-spacing: -.01em; }
+
+/* Campos del formulario a 16px en pantallas táctiles: con menos, Safari en
+   iPhone amplía la página al tocar un campo. En escritorio siguen a .95rem. */
+@media (pointer: coarse) { .field input, .field textarea, .field select { font-size: 16px; } }

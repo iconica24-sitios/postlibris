@@ -1,0 +1,327 @@
+{
+  "label": "Precios",
+  "name": "precios",
+  "widget": "object",
+  "summary": "{{fields.titulo}}",
+  "fondo": false,
+  "fields": [
+    {
+      "label": "Etiqueta superior",
+      "name": "etiqueta",
+      "widget": "string",
+      "default": "Precios"
+    },
+    {
+      "label": "Título",
+      "name": "titulo",
+      "widget": "string",
+      "default": "Elige tu plan:"
+    },
+    {
+      "label": "Texto",
+      "name": "texto",
+      "widget": "string",
+      "default": "Sin el desembolso inicial · Tu eliges tu mensualidad."
+    },
+    {
+      "label": "Planes",
+      "name": "planes",
+      "widget": "list",
+      "hint": "Agrega, quita u ordena las tarjetas (arrastra para moverlas; la primera va a la izquierda y arriba en celular). «Oculta» la apaga sin borrarla.",
+      "typeKey": "tipo",
+      "types": [
+        {
+          "label": "Tarjeta de contado",
+          "name": "fijo",
+          "widget": "object",
+          "summary": "{{fields.nombre}} — {{fields.precio}}{{fields.destacada | ternary(' ★', '')}}{{fields.oculto | ternary(' (oculta)', '')}}",
+          "fields": [
+            {
+              "label": "Oculta (no se publica)",
+              "name": "oculto",
+              "widget": "boolean",
+              "required": false,
+              "default": false,
+              "hint": "Apaga la tarjeta sin borrarla."
+            },
+            {
+              "label": "Destacada",
+              "name": "destacada",
+              "widget": "boolean",
+              "required": false,
+              "default": false,
+              "hint": "Borde oscuro, sombra y botón negro. Puede haber más de una."
+            },
+            {
+              "label": "Insignia (vacío = sin insignia)",
+              "name": "insignia",
+              "widget": "string",
+              "required": false,
+              "default": ""
+            },
+            {
+              "label": "Nombre del plan",
+              "name": "nombre",
+              "widget": "string",
+              "default": "Contado"
+            },
+            {
+              "label": "Precio",
+              "name": "precio",
+              "widget": "string",
+              "hint": "Ej. $499",
+              "default": "$9,900"
+            },
+            {
+              "label": "Periodo",
+              "name": "periodo",
+              "widget": "string",
+              "hint": "Ej. MX/mes",
+              "default": "MXN"
+            },
+            {
+              "label": "Forma de cobro",
+              "name": "cobro",
+              "widget": "string",
+              "default": "Precio de contado: $9,900^1^"
+            },
+            {
+              "label": "Qué incluye",
+              "name": "caracteristicas",
+              "widget": "list",
+              "field": {
+                "label": "Punto",
+                "name": "punto",
+                "widget": "string"
+              },
+              "hint": "Formato: `==resaltado==` · `**negritas**` · `[texto del enlace](https://…)`",
+              "default": [
+                "Tu sitio web en 24 hrs.^5^",
+                "==Diseñador asignado==",
+                "Editor para textos e imágenes",
+                "12 meses de alojamiento incluido"
+              ]
+            },
+            {
+              "label": "Texto del botón",
+              "name": "boton",
+              "widget": "string",
+              "default": "Comprar"
+            },
+            {
+              "label": "Enlace del botón",
+              "name": "enlace",
+              "widget": "string",
+              "hint": "#ancla de una sección (p. ej. #contacto), /página o https://… (por ejemplo, un enlace de pago).",
+              "pattern": [
+                "^(#[a-z0-9-]+|/.*|https?://.+|mailto:.+|tel:.+)$",
+                "Empieza con # (sección de esta página), / (página del sitio) o https://"
+              ],
+              "default": "#contacto"
+            }
+          ]
+        },
+        {
+          "label": "Tarjeta destacada (con plazos)",
+          "name": "plazos",
+          "widget": "object",
+          "summary": "Total {{fields.total}}{{fields.destacada | ternary(' ★', '')}}{{fields.oculto | ternary(' (oculta)', '')}}",
+          "fields": [
+            {
+              "label": "Oculta (no se publica)",
+              "name": "oculto",
+              "widget": "boolean",
+              "required": false,
+              "default": false,
+              "hint": "Apaga la tarjeta sin borrarla."
+            },
+            {
+              "label": "Destacada",
+              "name": "destacada",
+              "widget": "boolean",
+              "required": false,
+              "default": true,
+              "hint": "Borde oscuro, sombra y botón negro. Puede haber más de una."
+            },
+            {
+              "label": "Insignia (vacío = sin insignia)",
+              "name": "insignia",
+              "widget": "string",
+              "required": false,
+              "default": "Más Solicitado"
+            },
+            {
+              "label": "Plazos",
+              "name": "plazos",
+              "widget": "list",
+              "min": 1,
+              "summary": "{{fields.meses}} meses — {{fields.precio}}",
+              "hint": "Opciones del selector. Sale elegido el último de la lista.",
+              "fields": [
+                {
+                  "label": "Meses",
+                  "name": "meses",
+                  "widget": "string",
+                  "pattern": [
+                    "^\\d+$",
+                    "Sólo el número, p. ej. 12"
+                  ],
+                  "default": "3"
+                },
+                {
+                  "label": "Precio por mes",
+                  "name": "precio",
+                  "widget": "string",
+                  "hint": "Ej. $825",
+                  "default": "$3,300"
+                }
+              ],
+              "default": [
+                {
+                  "meses": "3",
+                  "precio": "$3,300"
+                },
+                {
+                  "meses": "6",
+                  "precio": "$1,650"
+                },
+                {
+                  "meses": "9",
+                  "precio": "$1,100"
+                },
+                {
+                  "meses": "12",
+                  "precio": "$825"
+                }
+              ]
+            },
+            {
+              "label": "Total",
+              "name": "total",
+              "widget": "string",
+              "hint": "Ej. $9,900. Debajo del precio se lee: «12 pagos de $825 — total $9,900»",
+              "default": "$9,900"
+            },
+            {
+              "label": "Periodo",
+              "name": "periodo",
+              "widget": "string",
+              "hint": "Ej. MX/mes",
+              "default": "MXN"
+            },
+            {
+              "label": "Qué incluye",
+              "name": "caracteristicas",
+              "widget": "list",
+              "field": {
+                "label": "Punto",
+                "name": "punto",
+                "widget": "string"
+              },
+              "hint": "Formato: `==resaltado==` · `**negritas**` · `[texto del enlace](https://…)`",
+              "default": [
+                "Todo lo incluido en el plan de contado",
+                "==Mensualidades SIN intereses=="
+              ]
+            },
+            {
+              "label": "Texto del botón",
+              "name": "boton",
+              "widget": "string",
+              "default": "Comprar"
+            },
+            {
+              "label": "Enlace del botón",
+              "name": "enlace",
+              "widget": "string",
+              "hint": "#ancla de una sección (p. ej. #contacto), /página o https://… (por ejemplo, un enlace de pago).",
+              "pattern": [
+                "^(#[a-z0-9-]+|/.*|https?://.+|mailto:.+|tel:.+)$",
+                "Empieza con # (sección de esta página), / (página del sitio) o https://"
+              ],
+              "default": "#contacto"
+            }
+          ]
+        }
+      ],
+      "default": [
+        {
+          "tipo": "plazos",
+          "insignia": "Más Solicitado",
+          "plazos": [
+            {
+              "meses": "3",
+              "precio": "$3,300"
+            },
+            {
+              "meses": "6",
+              "precio": "$1,650"
+            },
+            {
+              "meses": "9",
+              "precio": "$1,100"
+            },
+            {
+              "meses": "12",
+              "precio": "$825"
+            }
+          ],
+          "total": "$9,900",
+          "periodo": "MXN",
+          "caracteristicas": [
+            "Todo lo incluido en el plan de contado",
+            "==Mensualidades SIN intereses=="
+          ],
+          "boton": "Comprar",
+          "enlace": "#contacto",
+          "destacada": true
+        },
+        {
+          "enlace": "#contacto",
+          "boton": "Comprar",
+          "precio": "$9,900",
+          "nombre": "Contado",
+          "caracteristicas": [
+            "Tu sitio web en 24 hrs.^5^",
+            "==Diseñador asignado==",
+            "Editor para textos e imágenes",
+            "12 meses de alojamiento incluido"
+          ],
+          "periodo": "MXN",
+          "cobro": "Precio de contado: $9,900^1^",
+          "tipo": "fijo",
+          "insignia": "",
+          "destacada": false
+        }
+      ],
+      "label_singular": "tarjeta"
+    },
+    {
+      "label": "Nota al pie",
+      "name": "nota",
+      "widget": "text",
+      "hint": "Formato: `==resaltado==` · `**negritas**` · `[texto del enlace](https://…)`",
+      "default": "La integración de plataformas de terceros —reservas, citas, pagos, membresías— se cotiza por separado. [Consulta qué incluye tu plan y cuáles son servicios adicionales.](servicios.html)"
+    },
+    {
+      "label": "Fondo gris",
+      "name": "fondo_gris",
+      "widget": "boolean",
+      "required": false,
+      "default": false,
+      "hint": "Gris claro con filete arriba y abajo; sin marcar, fondo blanco."
+    },
+    {
+      "label": "Ancla para el menú",
+      "name": "ancla",
+      "widget": "string",
+      "required": false,
+      "default": "precios",
+      "hint": "Sin espacios (p. ej. precios): el menú la enlaza como #precios. Vacío = sin ancla.",
+      "pattern": [
+        "^[a-z0-9-]*$",
+        "Sólo minúsculas, números y guiones"
+      ]
+    }
+  ]
+}

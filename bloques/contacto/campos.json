@@ -1,0 +1,92 @@
+{
+  "label": "Contacto",
+  "name": "contacto",
+  "widget": "object",
+  "summary": "{{fields.titulo}}",
+  "fondo": false,
+  "fields": [
+    {
+      "label": "Título",
+      "name": "titulo",
+      "widget": "string",
+      "default": "Empecemos por conocer tu negocio."
+    },
+    {
+      "label": "Texto",
+      "name": "texto",
+      "widget": "text",
+      "hint": "Formato: `==resaltado==` · `**negritas**` · `[texto del enlace](https://…)`",
+      "default": "Cuéntanos a qué te dedicas y cómo quieres que te vean. ==Compártenos la URL de algún sitio que consideres adaptable.== Nosotros te decimos que se puede retomar y que no."
+    },
+    {
+      "label": "WhatsApp (como se muestra)",
+      "name": "whatsapp",
+      "widget": "string",
+      "default": "",
+      "required": false,
+      "hint": "Como se muestra. Vacío = no se muestra."
+    },
+    {
+      "label": "Enlace del botón de WhatsApp",
+      "name": "whatsapp_enlace",
+      "widget": "string",
+      "default": "",
+      "hint": "https://wa.me/52… con el número sin espacios; después de ?text= va el mensaje que se escribe solo (los espacios como %20). Vacío = sin botón.",
+      "pattern": [
+        "^(|#[a-z0-9-]+|/.*|https?://.+|mailto:.+|tel:.+)$",
+        "Empieza con # (sección de esta página), / (página del sitio) o https://"
+      ],
+      "required": false
+    },
+    {
+      "label": "Ubicación",
+      "name": "ubicacion",
+      "widget": "string",
+      "default": "Ciudad de México · Servicio 100% en línea"
+    },
+    {
+      "label": "Correo de destino",
+      "name": "correo_destino",
+      "widget": "string",
+      "required": false,
+      "default": "",
+      "hint": "A dónde llegan los mensajes del formulario. Al enviar se abre la aplicación de correo de quien escribe, con el mensaje listo.",
+      "pattern": [
+        "^([^@\\s]+@[^@\\s]+\\.[^@\\s]+)?$",
+        "Escribe un correo válido"
+      ]
+    },
+    {
+      "label": "Al enviar: título",
+      "name": "enviado_titulo",
+      "widget": "string",
+      "default": "Mensaje listo."
+    },
+    {
+      "label": "Al enviar: texto",
+      "name": "enviado_texto",
+      "widget": "text",
+      "default": "Se abrió tu aplicación de correo con el mensaje: sólo falta darle Enviar."
+    },
+    {
+      "label": "Fondo gris",
+      "name": "fondo_gris",
+      "widget": "boolean",
+      "required": false,
+      "default": true,
+      "hint": "Gris claro con filete arriba y abajo; sin marcar, fondo blanco."
+    },
+    {
+      "label": "Ancla para el menú",
+      "name": "ancla",
+      "widget": "string",
+      "required": false,
+      "default": "contacto",
+      "hint": "Sin espacios (p. ej. precios): el menú la enlaza como #precios. Vacío = sin ancla.",
+      "pattern": [
+        "^[a-z0-9-]*$",
+        "Sólo minúsculas, números y guiones"
+      ]
+    }
+  ]
+}

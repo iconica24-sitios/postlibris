@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title data-cms="seo.titulo">Nombre</title>
+    <meta name="description" data-cms-content="seo.descripcion" content=""/>
+    <!-- Al compartir el enlace (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" data-cms-content="seo.titulo_compartir" content=""/>
+    <meta property="og:description" data-cms-content="seo.descripcion_compartir" content=""/>
+    <meta property="og:locale" content="es_MX"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" data-cms-content="seo.titulo_compartir" content=""/>
+    <meta name="twitter:description" data-cms-content="seo.descripcion_compartir" content=""/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+<!-- =========================================================================
+     Plantilla «ortizeta» de GraphicaWeb (diseño de grfkweb.com)
+     -------------------------------------------------------------------------
+     Esta página es el molde de todas las páginas del sitio: cabecera, pie y,
+     en medio, los bloques que el cliente elige y ordena desde el panel.
+     - Cabecera, menú, color de acento y pie: contenido/sitio.json.
+     - Bloques de la página: contenido/inicio.json → "bloques".
+     - Cada bloque vive en bloques/<tipo>/ (su HTML y sus campos del panel).
+       Su diseño está en css/styles.css. El build los junta (kit).
+     ========================================================================= -->
+<div class="sitio" style="" data-cms-style="--accent:{sitio.marca.acento}">
+        <header class="header cabecera" id="header">
+            <div class="container header__inner cabecera__fila">
+                <a href="/#top" class="brand marca" data-scroll><span class="brand__mark" aria-hidden="true">Ø</span> <span data-cms="sitio.nombre">Nombre</span></a>
+                <!-- Menú: contenido/sitio.json (pestaña «Menú y sitio» del editor). Si
+                     las opciones no caben, pasa solo a la hamburguesa (js/main.js). -->
+                <nav class="nav menu" aria-label="Navegación principal">
+                    <ul class="nav__list" data-cms-list="sitio.menu">
+                        <li data-cms-item><a class="nav__link" href="#hero" data-cms-href=".url" data-cms=".texto" data-scroll>Inicio</a></li>
+                    </ul>
+                </nav>
+                <button class="hamburger hamburguesa" id="hamburger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <!-- Menú móvil colapsable -->
+            <div class="mobile-nav menu-movil" id="mobile-nav">
+                <ul class="mobile-nav__list menu-movil__lista" data-cms-list="sitio.menu">
+                    <li data-cms-item><a class="mobile-nav__link" href="#hero" data-cms-href=".url" data-cms=".texto" data-scroll>Inicio</a></li>
+                </ul>
+            </div>
+        </header>
+        <main id="top" data-cms-bloques="bloques"></main>
+        <footer class="footer" data-screen-label="Footer">
+            <div class="container">
+                <div class="footer__bottom">
+                    © <span id="year"></span> <span data-cms="sitio.pie.legal">Nombre - Todos los derechos reservados.</span>
+                </div>
+            </div>
+        </footer>
+</div>
+        <script src="js/main.js"></script>
+        <script src="js/contacto.js"></script>
+</body>
+</html>
