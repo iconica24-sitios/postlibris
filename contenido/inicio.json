@@ -8,7 +8,7 @@
   "bloques": [
     {
       "tipo": "hero",
-      "titulo": "Convierte tu página web en un hub de ventas.",
+      "titulo": "Convierte tu tesis en un libro académico.",
       "subtitulo": "Solo necesitas un nombre de dominio ==y tener presencia en redes sociales.== Nosotros nos encargamos de todo lo demás.",
       "boton_principal": "Cómo funciona",
       "boton_principal_enlace": "#como-funciona",
@@ -369,17 +369,17 @@
       "ancla": "faq"
     },
     {
+      "texto": "Cuéntanos a qué te dedicas y cómo quieres que te vean. ==Compártenos la URL de tu plantilla favorita.== Puedes elegir de entre muchos proveedores **que cuentan con planes gratuitos.**",
+      "fondo_gris": true,
+      "enviado_titulo": "Mensaje listo.",
+      "ancla": "contacto",
+      "whatsapp_enlace": "",
+      "whatsapp": "",
+      "enviado_texto": "Se abrió tu aplicación de correo con el mensaje: sólo falta darle Enviar.",
       "tipo": "contacto",
       "titulo": "Empecemos por conocer tu negocio.",
-      "texto": "Cuéntanos a qué te dedicas y cómo quieres que te vean. ==Compártenos la URL de tu plantilla favorita.== Puedes elegir de entre muchos proveedores **que cuentan con planes gratuitos.**",
-      "whatsapp": "",
-      "whatsapp_enlace": "",
-      "ubicacion": "Ciudad de México · Servicio 100% en línea",
-      "fondo_gris": true,
-      "ancla": "contacto",
       "correo_destino": "",
-      "enviado_titulo": "Mensaje listo.",
-      "enviado_texto": "Se abrió tu aplicación de correo con el mensaje: sólo falta darle Enviar."
+      "ubicacion": "Ciudad de México · Servicio 100% en línea"
     },
     {
       "tipo": "notas",
