@@ -9,7 +9,7 @@
     {
       "tipo": "hero",
       "titulo": "Convierte tu tesis en un libro académico.",
-      "subtitulo": "Ser autor o autora de un libro comercial o académico ==te posiciona como un verdadero experto en la materia.== Tú ya tienes el 90% del esfuerzo. Conviértelo en una obra editada, lista para su publicación.",
+      "subtitulo": "Ser autor o autora de un libro comercial o académico ==te posiciona como un verdadero experto en la materia.==",
       "boton_principal": "Cómo funciona",
       "boton_principal_enlace": "#como-funciona",
       "boton_secundario": "Quiero mi sitio",
@@ -18,8 +18,8 @@
     },
     {
       "tipo": "pasos",
-      "titulo": "Dirige tráfico de tus redes sociales hacia tu página web.",
-      "texto": "Si ya tienes una presencia respetable en redes sociales —Instagram, Facebook, TikTok, etc.— ==sólo te falta conectarlas a una landing page vendedora.== Si no tienes una, nosotros la creamos sin costo adicional en tres sencillos pasos: ",
+      "titulo": "Tú ya tienes el 90% del esfuerzo.",
+      "texto": "Convierte tu tesis en una obra editada y lista para su publicación ==en tres sencillos pasos.==",
       "tarjetas": [
         {
           "etiqueta": "Dominio",
