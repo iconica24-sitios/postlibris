@@ -324,6 +324,14 @@ ul { list-style: none; padding: 0; }
   font-size: clamp(2rem, 11vw, 6.5rem);      /* respaldo */
   font-size: clamp(2rem, 11.5cqw, 6.5rem);   /* preferido */
   text-wrap: balance;
+  /* PostLibris: el titular va siempre en 3 líneas, cortado igual en todos los
+     anchos («Convierte tu / tesis en un libro / académico.»). El ancho está
+     en em, así que crece y se achica con la letra: cabe «tesis en un libro»
+     (7.36em) y no caben «libro académico.» (7.74em) ni «Convierte tu tesis»
+     (8.43em). Sin él, desde ~1100px (letra en su tope de 6.5rem) pasaba a
+     2 líneas. Si cambia el texto del titular, hay que recalcular este número. */
+  max-width: 7.55em;
+  margin-inline: auto;
 }
 .hero__subtitle {
   margin: 1.4rem auto 0;
