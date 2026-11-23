@@ -30,7 +30,7 @@
     },
     {
       "tipo": "pasos",
-      "titulo": "Publicamos tu experiencia y autoridad en 3 sencillos pasos.",
+      "titulo": "Publicamos tu tesis o manuscrito en 3 sencillos pasos.",
       "texto": "Ser autor o autora de un libro comercial (o académico), ==te posiciona como un verdadero experto/experta== ante cualquier escenario profesional.",
       "tarjetas": [
         {
@@ -52,7 +52,7 @@
           "icono": "barcode"
         }
       ],
-      "boton": "Convierte tu texto en un auténtico libro",
+      "boton": "",
       "boton_enlace": "#cta",
       "fondo_gris": true,
       "ancla": "como-funciona"
