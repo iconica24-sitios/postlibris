@@ -9,7 +9,7 @@
     {
       "tipo": "hero",
       "titulo": "Convierte tu tesis en un libro académico.",
-      "subtitulo": "Ser autor o autora de un libro comercial o académico ==te posiciona como un verdadero experto en la materia.==",
+      "subtitulo": "Ser autor o autora de un libro comercial o académico ==te posiciona como un verdadero experto en la materia== ante cualquier situación.",
       "boton_principal": "Cómo funciona",
       "boton_principal_enlace": "#como-funciona",
       "boton_secundario": "Quiero mi sitio",
@@ -18,26 +18,26 @@
     },
     {
       "tipo": "pasos",
-      "titulo": "Tú ya tienes el 90% del esfuerzo.",
-      "texto": "Convierte tu tesis en una obra editada y lista para su publicación ==en tres sencillos pasos.==",
+      "titulo": "Tú ya hiciste el 90% del esfuerzo.",
+      "texto": "Convierte tu tesis de licenciatura, maestría o doctorado, ==en una obra editada y lista para su publicación== en tres sencillos pasos:",
       "tarjetas": [
         {
           "etiqueta": "Dominio",
-          "titulo": "01. Apunta tu dominio a nuestros servidores",
-          "texto": "Si no cuentas con uno, te podemos asesorar para su registro y configuración con tu propio proveedor.",
-          "icono": "globo"
+          "titulo": "01. Subes tu tesis",
+          "texto": "En el formato original de trabajo editable (Word, Docs, Pages, etc.). El archivo lo puedes subir comprimido en un ZIP.",
+          "icono": "cuadricula"
         },
         {
           "etiqueta": "Landing Page",
-          "titulo": "02. Elige un diseño web base",
-          "texto": "Reconstruimos una página web ==totalmente original== a partir de la reinterpretación y adaptación de cualquier plantilla comercial^5^.",
+          "titulo": "02. Le damos formato de libro",
+          "texto": "Una vez acordados los aspectos relevantes tales como portada, estilo, título, capitulado, índice, etc., etc. procedemos a dar formato a tu nuevo libro.",
           "icono": "lapiz"
         },
         {
           "etiqueta": "Seguidores",
-          "titulo": "03. Conecta tus redes sociales",
+          "titulo": "03. Lo registras ante el INDAUTOR",
           "texto": "Convierte a tus seguidores en compradores enviando la actividad de tus redes sociales a tu nueva landing-page.",
-          "icono": "cuadricula"
+          "icono": "globo"
         }
       ],
       "boton": "Convierte tu sitio en 24 hrs.",
