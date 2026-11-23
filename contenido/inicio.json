@@ -228,7 +228,7 @@
     {
       "texto": "GraphicaWeb | Opciones \"hágalo usted mismo\" (DIY) | Diseñador/a Web",
       "fondo_gris": true,
-      "oculto": true,
+      "oculto": false,
       "ancla": "compara",
       "col1": {
         "nombre": "GraphicaWeb",
