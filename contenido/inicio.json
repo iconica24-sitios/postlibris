@@ -8,13 +8,13 @@
   "bloques": [
     {
       "oculto": false,
-      "boton_secundario": "Estamos a tus órdenes",
+      "boton_secundario": "Preguntas frecuentes",
       "boton_principal_enlace": "#como-funciona",
       "ancla": "hero",
       "tipo": "hero",
       "boton_principal": "Cómo funciona",
-      "boton_secundario_enlace": "#cta",
-      "subtitulo": "Las tesis son para estudiantes. ==Los verdaderos expertos escriben libros.== Convierte tu tesis en un libro académico y posiciónate como experto ante cualquier escenario.",
+      "boton_secundario_enlace": "#faq",
+      "subtitulo": "Las tesis son para estudiantes. ==Los verdaderos expertos, escriben libros.== Eleva tu tesis a un libro académico y posiciónate como un verdadero experto o experta ante cualquier escenario.",
       "titulo": "Convierte tu tesis en un libro académico."
     },
     {
@@ -52,7 +52,7 @@
           "icono": "barcode"
         }
       ],
-      "boton": "Convierte tu tesis o manuscrito",
+      "boton": "Convierte tu texto en un auténtico libro",
       "boton_enlace": "#cta",
       "fondo_gris": true,
       "ancla": "como-funciona"
@@ -156,7 +156,7 @@
       "ancla": "ventajas"
     },
     {
-      "texto": "**Tus seguidores valen oro para tu negocio.** Sin una estrategia de ventas efectiva, tus posibles clientes se desperdician en la vastedad de internet. **¡Llévalos a tu \"landing\" y comienza a vender!**",
+      "texto": "Convierte tu tesis de licenciatura, maestría, doctorado —o cualquier otro texto— **en una obra editada y lista para su publicación** en tres sencillos pasos:",
       "boton_secundario": "Compara",
       "boton_principal_enlace": "#precios",
       "ancla": "cta",
@@ -164,7 +164,7 @@
       "tipo": "cta",
       "boton_principal": "Quiero una página que venda",
       "boton_secundario_enlace": "#compara",
-      "titulo": "Capitaliza tus redes sociales."
+      "titulo": "Ya tienes el 90% del trabajo."
     },
     {
       "tipo": "precios",
