@@ -388,7 +388,6 @@ ul { list-style: none; padding: 0; }
   padding-block: clamp(30px, 4.5vw, 52px);
   background: var(--bg-dark);
   color: #fff;
-  scroll-margin-top: var(--header-h);
 }
 .intro__title {
   font-size: clamp(1.5rem, 5.2vw, 2.7rem);
@@ -862,7 +861,6 @@ ul { list-style: none; padding: 0; }
 /* ==========================================================================
    PREGUNTAS FRECUENTES — acordeón nativo (details/summary)
    ========================================================================== */
-.faq { scroll-margin-top: var(--header-h); }
 .faq__head { max-width: 44rem; }
 .faq__head .eyebrow { color: var(--accent-strong); }
 .faq__title { font-size: clamp(1.6rem, 5vw, 2.3rem); font-weight: 800; letter-spacing: -.025em; text-wrap: balance; }
@@ -1651,3 +1649,10 @@ html.fbx-lock body { position: fixed; width: 100%; overflow: hidden; }
 /* Campos del formulario a 16px en pantallas táctiles: con menos, Safari en
    iPhone amplía la página al tocar un campo. En escritorio siguen a .95rem. */
 @media (pointer: coarse) { .field input, .field textarea, .field select { font-size: 16px; } }
+
+/* Anclas bajo la cabecera fija: el navegador (y la vista previa del editor,
+   donde js/main.js no corre) deja cada sección justo debajo de la cabecera
+   (--header-h + 1px de su borde). En el sitio, js/main.js desplaza con la
+   misma medida. Sustituye los scroll-margin-top que traían .intro y .faq,
+   que se sumarían a éste. */
+html { scroll-padding-top: calc(var(--header-h) + 1px); }

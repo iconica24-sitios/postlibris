@@ -62,6 +62,18 @@
             {
               "label": "Mensaje",
               "value": "mensaje"
+            },
+            {
+              "label": "Libro",
+              "value": "libro"
+            },
+            {
+              "label": "Subir documento",
+              "value": "subir"
+            },
+            {
+              "label": "Código de barras",
+              "value": "codigo"
             }
           ]
         },
