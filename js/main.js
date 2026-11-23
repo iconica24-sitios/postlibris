@@ -106,11 +106,20 @@
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' });
   }
+  // Ruta sin index.html ni / final, para comparar páginas: "/" y "/index.html" son la misma.
+  function mismaPagina(a, b) {
+    var limpia = function (p) { return p.replace(/\/index\.html$/, '/').replace(/\/+$/, '') || '/'; };
+    return limpia(a) === limpia(b);
+  }
   document.querySelectorAll('[data-scroll]').forEach(function (link) {
     link.addEventListener('click', function (e) {
-      var id = link.getAttribute('href');
-      if (!id || id.charAt(0) !== '#') return;
-      var target = document.querySelector(id);
+      // "#hero" o "/#hero" (la marca, que también sirve desde otras páginas):
+      // si el destino está en esta misma página, se desplaza con el mismo
+      // ajuste que el menú, para que la cabecera no tape el principio.
+      var href = link.getAttribute('href') || '';
+      var id = href.charAt(0) === '#' ? href : (link.hash && mismaPagina(link.pathname, location.pathname) ? link.hash : '');
+      if (!/^#[\w-]+$/.test(id)) return;
+      var target = document.getElementById(id.slice(1));
       if (!target) return;
       e.preventDefault();
       // La alineación la pone el enlace o, si no, la sección de destino
@@ -119,6 +128,16 @@
       history.replaceState(null, '', id);
     });
   });
+  // Al llegar desde otra página con un #ancla (p. ej. /#precios), el
+  // navegador salta sin contar la cabecera fija: se corrige al cargar.
+  if (/^#[\w-]+$/.test(location.hash)) {
+    var alLlegar = document.getElementById(location.hash.slice(1));
+    if (alLlegar) window.addEventListener('load', function () {
+      var top = alLlegar.getBoundingClientRect().top + window.scrollY - headerOffset();
+      if (alLlegar.getAttribute('data-scroll-align') === 'bottom') top = alLlegar.getBoundingClientRect().bottom + window.scrollY - window.innerHeight;
+      window.scrollTo(0, Math.max(0, top));
+    });
+  }
 
   /* ---------- Nav activo según sección visible ------------------------ */
   // Las secciones salen de los #ancla del menú (contenido/sitio.json), en
