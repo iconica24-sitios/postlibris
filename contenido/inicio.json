@@ -7,14 +7,26 @@
   },
   "bloques": [
     {
-      "tipo": "hero",
-      "titulo": "Convierte tu tesis en un libro académico.",
-      "subtitulo": "Ser autor o autora de un libro comercial o académico ==te posiciona como un verdadero experto en la materia== ante cualquier escenario.",
-      "boton_principal": "Cómo funciona",
+      "oculto": false,
+      "boton_secundario": "Sin curva de aprendizaje",
       "boton_principal_enlace": "#como-funciona",
+      "ancla": "hero",
+      "tipo": "hero",
+      "boton_principal": "Cómo funciona",
+      "boton_secundario_enlace": "#cta",
+      "subtitulo": "Las tesis son para estudiantes. ==Los verdaderos expertos escriben libros.== Convierte tu tesis en un libro académico y posiciónate como experto ante cualquier escenario.",
+      "titulo": "Convierte tu tesis en un libro académico."
+    },
+    {
+      "oculto": true,
       "boton_secundario": "Quiero mi sitio",
+      "boton_principal_enlace": "#como-funciona",
+      "ancla": "hero",
+      "tipo": "hero",
+      "boton_principal": "Cómo funciona",
       "boton_secundario_enlace": "#precios",
-      "ancla": "hero"
+      "subtitulo": "Ser autor o autora de un libro comercial o académico ==te posiciona como un verdadero experto en la materia== ante cualquier escenario.",
+      "titulo": "Convierte tu tesis en un libro académico."
     },
     {
       "tipo": "pasos",
@@ -40,7 +52,7 @@
           "icono": "barcode"
         }
       ],
-      "boton": "Convierte mi tesis en un libro",
+      "boton": "Convierte cualquier contenido",
       "boton_enlace": "#cta",
       "fondo_gris": true,
       "ancla": "como-funciona"
