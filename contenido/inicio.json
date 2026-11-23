@@ -7,7 +7,7 @@
   },
   "bloques": [
     {
-      "oculto": false,
+      "oculto": true,
       "boton_secundario": "Preguntas frecuentes",
       "boton_principal_enlace": "#como-funciona",
       "ancla": "hero",
@@ -18,15 +18,15 @@
       "titulo": "Convierte tu tesis en un libro académico."
     },
     {
-      "oculto": true,
+      "oculto": false,
       "boton_secundario": "Quiero mi sitio",
       "boton_principal_enlace": "#como-funciona",
       "ancla": "hero",
       "tipo": "hero",
       "boton_principal": "Cómo funciona",
       "boton_secundario_enlace": "#precios",
-      "subtitulo": "Ser autor o autora de un libro comercial o académico ==te posiciona como un verdadero experto en la materia== ante cualquier escenario.",
-      "titulo": "Convierte tu tesis en un libro académico."
+      "subtitulo": "Ser autor o autora de un libro comercial o académico ==te posiciona como un verdadero experto o experta en la materia== ante cualquier escenario.",
+      "titulo": "Tener un libro publicado hace brillar tu CV."
     },
     {
       "tipo": "pasos",
@@ -156,7 +156,7 @@
       "ancla": "ventajas"
     },
     {
-      "texto": "Convierte tu tesis de licenciatura, maestría, doctorado —o cualquier otro texto— **en una obra editada y lista para su publicación** en tres sencillos pasos:",
+      "texto": "Convierte tu tesis de licenciatura, maestría, doctorado —o cualquier otro texto— **en una obra editada y lista para su publicación.**",
       "boton_secundario": "Compara",
       "boton_principal_enlace": "#precios",
       "ancla": "cta",
@@ -222,12 +222,13 @@
         }
       ],
       "nota": "La integración de plataformas de terceros —reservas, citas, pagos, membresías— se cotiza por separado. [Consulta qué incluye tu plan y cuáles son servicios adicionales.](servicios.html)",
-      "fondo_gris": false,
+      "fondo_gris": true,
       "ancla": "precios"
     },
     {
       "texto": "GraphicaWeb | Opciones \"hágalo usted mismo\" (DIY) | Diseñador/a Web",
       "fondo_gris": true,
+      "oculto": true,
       "ancla": "compara",
       "col1": {
         "nombre": "GraphicaWeb",
