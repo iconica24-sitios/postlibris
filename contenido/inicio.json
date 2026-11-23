@@ -25,7 +25,7 @@
           "etiqueta": "Dominio",
           "titulo": "01. Subes tu tesis de forma segura",
           "texto": "En el formato original de trabajo editable (Word, Docs, Pages, etc.). El archivo lo puedes subir comprimido en un ZIP.",
-          "icono": "upload_file"
+          "icono": "upload"
         },
         {
           "etiqueta": "Landing Page",
