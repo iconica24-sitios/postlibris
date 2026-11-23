@@ -22,25 +22,25 @@
       "texto": "Convierte tu tesis de licenciatura, maestría o doctorado, ==en una obra editada y lista para su publicación== en tres sencillos pasos:",
       "tarjetas": [
         {
-          "etiqueta": "Dominio",
+          "etiqueta": "Tu Contenido",
           "titulo": "01. Subes tu tesis de forma segura",
           "texto": "En el formato original de trabajo editable (Word, Docs, Pages, etc.). El archivo lo puedes subir comprimido en un ZIP.",
           "icono": "upload"
         },
         {
-          "etiqueta": "Landing Page",
+          "etiqueta": "Formación Editorial/Diseño",
           "titulo": "02. Aquí le damos formato a tu libro",
           "texto": "Una vez acordados los aspectos formales tales como portada, estilo, título, capitulado, índice, bibliografía, etc.",
           "icono": "menu_book"
         },
         {
-          "etiqueta": "Seguidores",
+          "etiqueta": "ISBN",
           "titulo": "03. Lo registras ante el INDAUTOR",
           "texto": "Como autor independiente, puedes registrar tu libro ante el INDAUTOR y obtener tu código ISBN sin costo alguno.",
           "icono": "barcode"
         }
       ],
-      "boton": "Convierte tu sitio en 24 hrs.",
+      "boton": "Convierte mi tesis en un libro",
       "boton_enlace": "#cta",
       "fondo_gris": true,
       "ancla": "como-funciona"
