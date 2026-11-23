@@ -34,8 +34,8 @@
       "texto": "Convierte tu tesis de licenciatura, maestría o doctorado, ==en una obra editada y lista para su publicación== en tres sencillos pasos:",
       "tarjetas": [
         {
-          "etiqueta": "Tu Contenido",
-          "titulo": "01. Subes tu tesis o manuscrito",
+          "etiqueta": "Contenido",
+          "titulo": "01. Sube tu tesis o manuscrito",
           "texto": "En el formato original de trabajo editable (Word, Docs, Pages, etc.). El archivo lo puedes subir comprimido en un ZIP.",
           "icono": "upload"
         },
