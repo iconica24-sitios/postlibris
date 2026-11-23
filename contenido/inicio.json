@@ -25,19 +25,19 @@
           "etiqueta": "Dominio",
           "titulo": "01. Subes tu tesis de forma segura",
           "texto": "En el formato original de trabajo editable (Word, Docs, Pages, etc.). El archivo lo puedes subir comprimido en un ZIP.",
-          "icono": "cuadricula"
+          "icono": "subir"
         },
         {
           "etiqueta": "Landing Page",
           "titulo": "02. Le damos formato de libro",
           "texto": "Una vez acordados los aspectos formales tales como portada, estilo, título, capitulado, índice, bibliografía, etc.",
-          "icono": "lapiz"
+          "icono": "libro"
         },
         {
           "etiqueta": "Seguidores",
           "titulo": "03. Lo registras ante el INDAUTOR",
           "texto": "Como autor independiente, puedes registrar tu libro ante el INDAUTOR y obtener tu código ISBN sin costo alguno.",
-          "icono": "globo"
+          "icono": "codigo"
         }
       ],
       "boton": "Convierte tu sitio en 24 hrs.",
