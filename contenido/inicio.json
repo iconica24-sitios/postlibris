@@ -8,7 +8,7 @@
   "bloques": [
     {
       "oculto": false,
-      "boton_secundario": "Sin curva de aprendizaje",
+      "boton_secundario": "Estamos a tus órdenes",
       "boton_principal_enlace": "#como-funciona",
       "ancla": "hero",
       "tipo": "hero",
@@ -31,7 +31,7 @@
     {
       "tipo": "pasos",
       "titulo": "Ya tienes el 90% del trabajo.",
-      "texto": "Convierte tu tesis de licenciatura, maestría o doctorado, ==en una obra editada y lista para su publicación== en tres sencillos pasos:",
+      "texto": "Convierte tu tesis de licenciatura, maestría, doctorado —o cualquier otro texto— ==en una obra editada y lista para su publicación== en tres sencillos pasos:",
       "tarjetas": [
         {
           "etiqueta": "Contenido",
