@@ -36,44 +36,33 @@
         {
           "label": "Ícono",
           "name": "icono",
+          "widget": "string",
+          "default": "language",
+          "hint": "Nombre de un ícono de Material Symbols, en minúsculas y con guion bajo (p. ej. menu_book, upload_file, barcode). Búscalos en fonts.google.com/icons.",
+          "pattern": [
+            "^[a-z0-9_]+$",
+            "Sólo minúsculas, números y guion bajo (p. ej. menu_book)"
+          ]
+        },
+        {
+          "label": "Posición del ícono",
+          "name": "posicion",
           "widget": "select",
-          "default": "globo",
+          "required": false,
+          "default": "centrado",
+          "hint": "Algunos íconos se ven un poco altos o bajos en su recuadro: ajústalos aquí.",
           "options": [
             {
-              "label": "Globo (dominio)",
-              "value": "globo"
+              "label": "Centrado",
+              "value": "centrado"
             },
             {
-              "label": "Lápiz (diseño)",
-              "value": "lapiz"
-            },
-            {
-              "label": "Cuadrícula (contenido)",
-              "value": "cuadricula"
-            },
-            {
-              "label": "Rayo",
-              "value": "rayo"
-            },
-            {
-              "label": "Reloj",
-              "value": "reloj"
-            },
-            {
-              "label": "Mensaje",
-              "value": "mensaje"
-            },
-            {
-              "label": "Libro",
-              "value": "libro"
-            },
-            {
-              "label": "Subir documento",
+              "label": "Subir",
               "value": "subir"
             },
             {
-              "label": "Código de barras",
-              "value": "codigo"
+              "label": "Bajar",
+              "value": "bajar"
             }
           ]
         },
@@ -101,19 +90,19 @@
           "etiqueta": "01 Dominio",
           "titulo": "Apunta tu dominio a nuestros servidores",
           "texto": "Si no cuentas con uno, te podemos asesorar para su registro y configuración.",
-          "icono": "globo"
+          "icono": "language"
         },
         {
           "etiqueta": "02 Diseño",
           "titulo": "Elige un diseño web de referencia",
           "texto": "Pásanos una o dos URLs de algún sitio o página web que te guste para usarla como guía.",
-          "icono": "lapiz"
+          "icono": "edit_square"
         },
         {
           "etiqueta": "03 Contenido",
           "titulo": "Comparte de qué trata tu negocio",
           "texto": "Sube los textos e imágenes que quieres mostrar en tu página web.",
-          "icono": "cuadricula"
+          "icono": "grid_view"
         }
       ],
       "label_singular": "tarjeta",

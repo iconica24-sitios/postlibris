@@ -1656,3 +1656,19 @@ html.fbx-lock body { position: fixed; width: 100%; overflow: hidden; }
    misma medida. Sustituye los scroll-margin-top que traían .intro y .faq,
    que se sumarían a éste. */
 html { scroll-padding-top: calc(var(--header-h) + 1px); }
+
+/* Íconos: Material Symbols Outlined, peso 300 (el enlace va en el <head> de
+   index.html; el editor lo toma de ahí para la vista previa). El nombre del
+   ícono es el texto del elemento (p. ej. «menu_book»); la fuente lo dibuja sin
+   JavaScript. Ancho fijo y overflow para que el nombre no asome mientras carga. */
+.icono {
+  font-family: 'Material Symbols Outlined'; font-weight: normal; font-style: normal;
+  font-size: 24px; line-height: 1; letter-spacing: normal; text-transform: none;
+  display: inline-block; width: 1em; height: 1em; overflow: hidden; white-space: nowrap; direction: ltr;
+  -webkit-font-feature-settings: 'liga'; font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased;
+}
+.contact__ico .icono { font-size: 20px; }
+/* Posición del ícono (campo del editor): algunos dibujos se ven altos o bajos
+   en su recuadro; se mueven 1/10 de su tamaño. */
+.icono--subir { translate: 0 -0.1em; }
+.icono--bajar { translate: 0 0.1em; }
