@@ -19,13 +19,13 @@
     },
     {
       "oculto": false,
-      "boton_secundario": "Quiero mi sitio",
+      "boton_secundario": "Preguntas frecuentes",
       "boton_principal_enlace": "#como-funciona",
       "ancla": "hero",
       "tipo": "hero",
       "boton_principal": "Cómo funciona",
-      "boton_secundario_enlace": "#precios",
-      "subtitulo": "Ser autor o autora de un libro comercial o académico ==te posiciona como un verdadero experto o experta en la materia== ante cualquier escenario.",
+      "boton_secundario_enlace": "#faq",
+      "subtitulo": "Ser autor o autora de un libro comercial o académico ==te posiciona como un verdadero experto o experta== ante cualquier escenario profesional.",
       "titulo": "Tener un libro publicado hace brillar tu CV."
     },
     {
