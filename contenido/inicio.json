@@ -373,7 +373,7 @@
       "fondo_gris": true,
       "enviado_titulo": "Mensaje listo.",
       "ancla": "contacto",
-      "whatsapp_enlace": "",
+      "whatsapp_enlace": "https://wa.me/525633668185",
       "whatsapp": "",
       "enviado_texto": "Se abrió tu aplicación de correo con el mensaje: sólo falta darle Enviar.",
       "tipo": "contacto",
