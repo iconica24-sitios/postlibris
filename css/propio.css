@@ -1,0 +1,12 @@
+/* Ajustes de diseño propios de este sitio. La consola lo conserva al subir
+   una versión nueva de la plantilla; css/styles.css sí se reemplaza. */
+
+/* Titular de la portada siempre en 3 líneas («Convierte tu / tesis en un
+   libro / académico.»). Si cambia el texto del titular, recalcular el ancho. */
+.hero__title {
+  max-width: 7.55em;
+  margin-inline: auto;
+}
+
+/* Subtítulo de la portada con el interletrado un poco más cerrado. */
+.hero__subtitle { letter-spacing: -0.02em; }
