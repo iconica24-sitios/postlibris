@@ -25,13 +25,13 @@
       "tipo": "hero",
       "boton_principal": "Cómo funciona",
       "boton_secundario_enlace": "#faq",
-      "subtitulo": "Convierte tu tesis de licenciatura, posgrado —o cualquier otro texto— ==en una obra profesional, **editada y lista para su publicación.**== ",
+      "subtitulo": "Convierte tu tesis de licenciatura, posgrado —o cualquier otro texto— ==en una obra profesional, **editada y lista para su publicación.**==",
       "titulo": "Tener un libro publicado hace brillar tu CV."
     },
     {
       "tipo": "pasos",
-      "titulo": "Publicamos tu tesis o manuscrito en 3 sencillos pasos.",
-      "texto": "Tener la autoría de un libro comercial (o académico), ==te posiciona como un verdadero experto o experta== ante cualquier escenario profesional.",
+      "titulo": "Editamos tu tesis o manuscrito en 3 sencillos pasos.",
+      "texto": "Postlibris no es una casa editorial. Luego entonces la edición a la que hacemos referencia se refiere a ==**preparar la edición de tu libro** para la publicación subsecuente.==",
       "tarjetas": [
         {
           "etiqueta": "Contenido",
@@ -42,7 +42,7 @@
         {
           "etiqueta": "Formación Editorial y Diseño",
           "titulo": "02. Convertimos tu texto en un libro",
-          "texto": "Una vez acordados los aspectos formales tales como portada, estilo, título, capitulado, índice, bibliografía, etc., continuamos con la edición.",
+          "texto": "Una vez acordados aspectos formales tales como portada, estilo, título, capitulado, índice, bibliografía, etc., continuamos con la edición.",
           "icono": "menu_book"
         },
         {
