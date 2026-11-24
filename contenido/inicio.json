@@ -52,7 +52,7 @@
           "icono": "barcode"
         }
       ],
-      "boton": "Si cumplo los requisitos",
+      "boton": "Ya tengo una tesis/manuscrito",
       "boton_enlace": "#cta",
       "fondo_gris": true,
       "ancla": "como-funciona"
@@ -157,12 +157,12 @@
     },
     {
       "texto": "Tener la autoría de un libro comercial (o académico), **te posiciona como un verdadero experto o experta** ante cualquier escenario profesional.",
-      "boton_secundario": "Compara tipos de edición",
+      "boton_secundario": "Compara tipos de publicación",
       "boton_principal_enlace": "#precios",
       "ancla": "cta",
-      "nota": "Obtén tu hub de ventas a 3, 6, 9 **y hasta 12 mensualidades sin intereses.**",
+      "nota": "Publica tu libro con 3, 6, 9 **y hasta 12 mensualidades sin intereses.**",
       "tipo": "cta",
-      "boton_principal": "Quiero ser un autor profesional",
+      "boton_principal": "Puedo ser un autor profesional",
       "boton_secundario_enlace": "#compara",
       "titulo": "Si hiciste una tesis profesional, ya tienes el 90% de tu libro."
     },
