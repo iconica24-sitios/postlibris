@@ -544,10 +544,10 @@ ul { list-style: none; padding: 0; }
    añadir una consulta max-width —el archivo no tiene ninguna activa—. */
 .steps__head { max-width: 46rem; margin-inline: auto; text-align: left; }
 .steps__title {
-  font-size: clamp(1.8rem, 6vw, 2.9rem);
+  font-size: clamp(2.3rem, 6vw, 2.9rem);
   font-weight: 800;
   letter-spacing: -.025em;
-  line-height: 1.05;
+  line-height: 0.98;
   text-wrap: balance;
 }
 .steps__lead {
