@@ -175,7 +175,7 @@
         {
           "enlace": "#contacto",
           "total": "$9,900",
-          "boton": "Publicar",
+          "boton": "Comprar",
           "caracteristicas": [
             "Formación electrónica",
             "Diseño de portada y contraportada",
@@ -207,12 +207,12 @@
         },
         {
           "enlace": "#contacto",
-          "boton": "Publicar",
+          "boton": "Comprar",
           "precio": "$9,900",
           "nombre": "Contado",
           "caracteristicas": [
             "Todo lo incluído en el plan a mensualidades",
-            "==Descuento del 12.5%=="
+            "==Descuento del 12.5%== al pagar con el cupón: \"CONTADO\""
           ],
           "periodo": "MXN",
           "cobro": "Precio de contado: $9,900^1^",
