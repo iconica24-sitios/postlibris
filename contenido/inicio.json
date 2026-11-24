@@ -36,13 +36,13 @@
         {
           "etiqueta": "Contenido",
           "titulo": "01. Sube tu contenido",
-          "texto": "En el formato original de trabajo editable (Word, Docs, Pages, etc.). El archivo lo puedes subir comprimido en un ZIP. Un editor te contactará para afinar detalles.",
+          "texto": "En el formato original de trabajo editable (Word, Docs, Pages, etc.). ==Uno de **nuestros editores** te contactará para afinar detalles.== Puedes subir tu archivo comprimido en un ZIP.",
           "icono": "upload"
         },
         {
           "etiqueta": "Formación Editorial y Diseño",
           "titulo": "02. Recibe tu libro",
-          "texto": "Una vez aplicados los aspectos formales tales como portada, título, capitulado, índice, bibliografía, etc., te mandamos un PDF para tu visto bueno.",
+          "texto": "Una vez aplicados los aspectos formales tales como portada, título, capitulado, índice, bibliografía, etc., **te mandamos un PDF con el libro terminado** para tu visto bueno.",
           "icono": "menu_book"
         },
         {
