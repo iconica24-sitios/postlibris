@@ -162,7 +162,7 @@
       "ancla": "cta",
       "nota": "Publica tu libro con 3, 6, 9 **y hasta 12 mensualidades sin intereses.**",
       "tipo": "cta",
-      "boton_principal": "Si quiero ser un autor profesional",
+      "boton_principal": "Quiero ser un autor profesional",
       "boton_secundario_enlace": "#compara",
       "titulo": "Si hiciste una tesis profesional, ya tienes el 90% de tu libro."
     },
@@ -175,9 +175,12 @@
         {
           "enlace": "#contacto",
           "total": "$9,900",
-          "boton": "Comprar",
+          "boton": "Publicar",
           "caracteristicas": [
-            "Todo lo incluido en el plan de contado",
+            "Formación electrónica",
+            "Diseño de portada y contraportada",
+            "Originales mecánicos para impresión",
+            "Gestión de ISBN (opcional)",
             "==Mensualidades SIN intereses=="
           ],
           "periodo": "MXN",
@@ -205,7 +208,7 @@
         },
         {
           "enlace": "#contacto",
-          "boton": "Comprar",
+          "boton": "Publicar",
           "precio": "$9,900",
           "nombre": "Contado",
           "caracteristicas": [
