@@ -35,19 +35,19 @@
       "tarjetas": [
         {
           "etiqueta": "Contenido",
-          "titulo": "01. Sube tu tesis o manuscrito",
+          "titulo": "01. Sube tu contenido",
           "texto": "En el formato original de trabajo editable (Word, Docs, Pages, etc.). El archivo lo puedes subir comprimido en un ZIP.",
           "icono": "upload"
         },
         {
           "etiqueta": "Formación Editorial y Diseño",
-          "titulo": "02. Convertimos tu texto en un libro",
-          "texto": "Una vez acordados los aspectos formales tales como portada, título, capitulado, índice, bibliografía, etc., continuamos con la edición.",
+          "titulo": "02. Aprueba portada y formato",
+          "texto": "Una vez aplicados los aspectos formales tales como portada, título, capitulado, índice, bibliografía, etc., te mandamos un PDF para tu visto bueno.",
           "icono": "menu_book"
         },
         {
           "etiqueta": "ISBN",
-          "titulo": "03. Lo registras ante el INDAUTOR",
+          "titulo": "03. Hazlo oficial",
           "texto": "Como autor independiente, puedes registrar tu libro ante el INDAUTOR y obtener tu código ISBN sin costo alguno.",
           "icono": "barcode"
         }
