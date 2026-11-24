@@ -30,7 +30,7 @@
     },
     {
       "tipo": "pasos",
-      "titulo": "Publicamos tu tesis o manuscrito en 3 sencillos pasos.",
+      "titulo": "Publica tu tesis o manuscrito en 3 sencillos pasos.",
       "texto": "",
       "tarjetas": [
         {
@@ -42,7 +42,7 @@
         {
           "etiqueta": "Formación Editorial y Diseño",
           "titulo": "02. Convertimos tu texto en un libro",
-          "texto": "Una vez acordados aspectos formales tales como portada, estilo, título, capitulado, índice, bibliografía, etc., continuamos con la edición.",
+          "texto": "Una vez acordados los aspectos formales tales como portada, título, capitulado, índice, bibliografía, etc., continuamos con la edición.",
           "icono": "menu_book"
         },
         {
@@ -52,7 +52,7 @@
           "icono": "barcode"
         }
       ],
-      "boton": "Ya tengo una tesis/manuscrito",
+      "boton": "",
       "boton_enlace": "#cta",
       "fondo_gris": true,
       "ancla": "como-funciona"
