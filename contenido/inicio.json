@@ -179,9 +179,8 @@
           "caracteristicas": [
             "Formación electrónica",
             "Diseño de portada y contraportada",
-            "Originales mecánicos para impresión",
-            "Gestión de ISBN (opcional)",
-            "==Mensualidades SIN intereses=="
+            "Originales mecánicos listos para impresión",
+            "Gestión de ISBN (opcional)"
           ],
           "periodo": "MXN",
           "tipo": "plazos",
@@ -203,7 +202,7 @@
               "precio": "$825"
             }
           ],
-          "insignia": "Más Solicitado",
+          "insignia": "MESES SIN INTERESES",
           "destacada": true
         },
         {
@@ -212,10 +211,8 @@
           "precio": "$9,900",
           "nombre": "Contado",
           "caracteristicas": [
-            "Tu sitio web en 24 hrs.^5^",
-            "==Diseñador asignado==",
-            "Editor para textos e imágenes",
-            "12 meses de alojamiento incluido"
+            "Todo lo incluído en el plan a mensualidades",
+            "==Descuento del 12.5%=="
           ],
           "periodo": "MXN",
           "cobro": "Precio de contado: $9,900^1^",
