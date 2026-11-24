@@ -538,11 +538,9 @@ ul { list-style: none; padding: 0; }
 /* ==========================================================================
    CARD GRID / Cómo funciona
    ========================================================================== */
-/* Alineación a la izquierda en móvil, centrada de 640px en adelante.
-   Al ser una hoja mobile-first, el estilo base ES el de móvil: por eso va
-   'left' aquí y el centrado se restituye en el @media de abajo, en vez de
-   añadir una consulta max-width —el archivo no tiene ninguna activa—. */
-.steps__head { max-width: 46rem; margin-inline: auto; text-align: left; }
+/* Encabezado de sección («Cómo funciona», «Plataformas», «Ventajas»):
+   centrado en todos los anchos, también en celular (23-11). */
+.steps__head { max-width: 46rem; margin-inline: auto; text-align: center; }
 .steps__title {
   font-size: clamp(2.3rem, 6vw, 2.9rem);
   font-weight: 800;
@@ -630,10 +628,10 @@ ul { list-style: none; padding: 0; }
 }
 .cta__text strong { color: #fff; font-weight: 600; }
 
-/* De tablet en adelante vuelven al centro. Los tres juntos para que el
-   comportamiento se lea de un vistazo y no haya que buscarlo en tres sitios. */
+/* De tablet en adelante vuelven al centro. Juntos para que el
+   comportamiento se lea de un vistazo y no haya que buscarlo en varios sitios.
+   (.steps__head ya va centrado desde celular.) */
 @media (min-width: 640px) {
-  .steps__head,
   .cta__title,
   .cta__text,
   .faq__title { text-align: center; }

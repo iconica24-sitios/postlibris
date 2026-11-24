@@ -25,13 +25,13 @@
       "tipo": "hero",
       "boton_principal": "Cómo funciona",
       "boton_secundario_enlace": "#faq",
-      "subtitulo": "Convierte tu tesis de licenciatura, maestría, doctorado —o cualquier otro texto— ==en una obra profesional, **editada y lista para su publicación.**==",
-      "titulo": "Tener un libro publicado hace brillar tu CV."
+      "subtitulo": "Convierte tu tesis de licenciatura, posgrado —o cualquier otro texto— ==en una obra profesional, **editada y lista para su publicación.**==",
+      "titulo": "Tener un libro publicado eleva tu currículum."
     },
     {
       "tipo": "pasos",
-      "titulo": "Publicamos tu experiencia y autoridad en 3 sencillos pasos.",
-      "texto": "Ser autor o autora de un libro comercial (o académico), ==te posiciona como un verdadero experto/experta== ante cualquier escenario profesional.",
+      "titulo": "Publica tu tesis o manuscrito en 3 sencillos pasos:",
+      "texto": "",
       "tarjetas": [
         {
           "etiqueta": "Contenido",
@@ -42,7 +42,7 @@
         {
           "etiqueta": "Formación Editorial y Diseño",
           "titulo": "02. Convertimos tu texto en un libro",
-          "texto": "Una vez acordados los aspectos formales tales como portada, estilo, título, capitulado, índice, bibliografía, etc., continuamos con la edición.",
+          "texto": "Una vez acordados los aspectos formales tales como portada, título, capitulado, índice, bibliografía, etc., continuamos con la edición.",
           "icono": "menu_book"
         },
         {
@@ -52,7 +52,7 @@
           "icono": "barcode"
         }
       ],
-      "boton": "Convierte tu texto en un auténtico libro",
+      "boton": "",
       "boton_enlace": "#cta",
       "fondo_gris": true,
       "ancla": "como-funciona"
@@ -156,15 +156,15 @@
       "ancla": "ventajas"
     },
     {
-      "texto": "Convierte tu tesis de licenciatura, maestría, doctorado —o cualquier otro texto— **en una obra editada y lista para su publicación.**",
-      "boton_secundario": "Compara",
+      "texto": "Tener la autoría de un libro comercial (o académico), **te posiciona como un verdadero experto o experta** ante cualquier escenario profesional.",
+      "boton_secundario": "Compara tipos de publicación",
       "boton_principal_enlace": "#precios",
       "ancla": "cta",
-      "nota": "Obtén tu hub de ventas a 3, 6, 9 **y hasta 12 mensualidades sin intereses.**",
+      "nota": "Publica tu libro con 3, 6, 9 **y hasta 12 mensualidades sin intereses.**",
       "tipo": "cta",
-      "boton_principal": "Quiero una página que venda",
+      "boton_principal": "Quiero ser un autor/a profesional",
       "boton_secundario_enlace": "#compara",
-      "titulo": "Ya tienes el 90% del trabajo."
+      "titulo": "Si hiciste una tesis profesional, ya tienes el 90% de tu libro."
     },
     {
       "tipo": "precios",
@@ -177,8 +177,10 @@
           "total": "$9,900",
           "boton": "Comprar",
           "caracteristicas": [
-            "Todo lo incluido en el plan de contado",
-            "==Mensualidades SIN intereses=="
+            "Formación electrónica",
+            "Diseño de portada y contraportada",
+            "Originales mecánicos listos para impresión",
+            "Gestión de ISBN (opcional)"
           ],
           "periodo": "MXN",
           "tipo": "plazos",
@@ -200,7 +202,7 @@
               "precio": "$825"
             }
           ],
-          "insignia": "Más Solicitado",
+          "insignia": "SIN INTERESES",
           "destacada": true
         },
         {
@@ -209,10 +211,8 @@
           "precio": "$9,900",
           "nombre": "Contado",
           "caracteristicas": [
-            "Tu sitio web en 24 hrs.^5^",
-            "==Diseñador asignado==",
-            "Editor para textos e imágenes",
-            "12 meses de alojamiento incluido"
+            "Todo lo incluído en el plan a mensualidades",
+            "==Descuento del 12.5%== al pagar con el cupón: \"CONTADO\""
           ],
           "periodo": "MXN",
           "cobro": "Precio de contado: $9,900^1^",
