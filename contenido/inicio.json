@@ -221,7 +221,7 @@
           "destacada": false
         }
       ],
-      "nota": "El precio se ofrece considerando que el documento editable se provee en las condiciones óptimas de importación. De lo contrario se sumará al costo el servicio correspondiente. [Consulta qué incluye este precio, y cuáles son los servicios adicionales.](#.html)",
+      "nota": "El precio se ofrece considerando que el documento editable se provee en ==buenas condiciones de importación.== De lo contrario se sumará al costo el servicio correspondiente. [Consulta qué incluye este precio, y cuáles son los servicios adicionales.](#.html)",
       "fondo_gris": true,
       "ancla": "precios"
     },
@@ -268,7 +268,7 @@
           },
           "col2": {
             "tipo": "no",
-            "texto": ""
+            "texto": "Es necesario reconstruir"
           },
           "col3": {
             "tipo": "si",
@@ -292,7 +292,7 @@
           }
         },
         {
-          "caracteristica": "Formación y maquetación realizada por un diseñador editorial.",
+          "caracteristica": "Formación editorial realizada por un diseñador profesional.",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -344,11 +344,11 @@
           "costo": true,
           "col1": {
             "tipo": "texto",
-            "texto": "100%"
+            "texto": "== 100% =="
           },
           "col2": {
             "tipo": "texto",
-            "texto": "100%"
+            "texto": "50%"
           },
           "col3": {
             "tipo": "texto",
