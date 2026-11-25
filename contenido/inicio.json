@@ -174,7 +174,7 @@
       "planes": [
         {
           "enlace": "#contacto",
-          "total": "$9,900",
+          "total": "$9,900^1^",
           "boton": "Comprar",
           "caracteristicas": [
             "Formación electrónica",
@@ -221,7 +221,7 @@
           "destacada": false
         }
       ],
-      "nota": "El precio publicado considera que el documento editable se provee en las condiciones óptimas de importación. De lo contrario se sumará al costo el servicio correspondiente. [Consulta qué incluye tu plan y cuáles son servicios adicionales.](#.html)",
+      "nota": "El precio se ofrece considerando que el documento editable se provee en las condiciones óptimas de importación. De lo contrario se sumará al costo el servicio correspondiente. [Consulta qué incluye tu plan y cuáles son servicios adicionales.](#.html)",
       "fondo_gris": true,
       "ancla": "precios"
     },
@@ -235,7 +235,7 @@
         "etiqueta": "(Recomendado)"
       },
       "col2": {
-        "nombre": "Autoedición^2^"
+        "nombre": "Soluciones tipo DIY^2^ (autoedición)"
       },
       "col3": {
         "nombre": "Editorial Tradicional"
@@ -244,7 +244,7 @@
       "titulo": "¡Compara!",
       "filas": [
         {
-          "caracteristica": "Sin curva de aprendizaje (DIY)",
+          "caracteristica": "Se trabaja con la estructura original de tu documento^3^",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -256,22 +256,6 @@
           },
           "col3": {
             "tipo": "si",
-            "texto": ""
-          }
-        },
-        {
-          "caracteristica": "Autoeditable",
-          "costo": false,
-          "col1": {
-            "tipo": "si",
-            "texto": ""
-          },
-          "col2": {
-            "tipo": "si",
-            "texto": ""
-          },
-          "col3": {
-            "tipo": "no",
             "texto": ""
           }
         },
@@ -398,8 +382,8 @@
       "tipo": "notas",
       "lista": [
         "Precios en pesos mexicanos. Mensualidades sin intereses disponibles con tarjetas de crédito participantes; los plazos que puedas usar dependen de tu banco y se muestran al momento de pagar.",
-        "DIY: \"Hágalo-usted-mismo\". Con constructores tipo Wix, WebFlow, Squarespace, Canva, etc., el costo mensual es una renta permanente y el diseño y creación del sitio dependen enteramente de tu tiempo, habilidad y experiencia para manejar la plataforma. Los archivos no son tuyos y no se pueden mover a otro proveedor.",
-        "Primer año incluido; después, $269 al mes.",
+        "DIY: \"Hágalo-usted-mismo\". Existen herramientas de autoedición que automatizan la creación de materiales editoriales. Sin embargo los resultados dependen enteramente de tu tiempo, habilidad y experiencia para manejar las aplicaciones.",
+        "Estas herramientas no permiten una importación adecuada de tu documento original —causando pérdidas de estilos y estructura. El caso más crítico es la imposibilidad de importar el aparato crítico de tu documento; elemento central en un texto de investigación científica.",
         "Precio calculado de acuerdo al plan de pago de 12 mensualidades sin intereses.",
         "Plazo de 24 horas contado desde que recibimos tu contenido completo —textos, imágenes, servicios, horarios, etc."
       ],
