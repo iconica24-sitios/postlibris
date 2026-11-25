@@ -340,7 +340,7 @@
           "caracteristica": "**¿Quién edita y publica tu libro?**"
         },
         {
-          "caracteristica": "La posibilidad de ver tu libro publicado.",
+          "caracteristica": "Viabilidad de ver tu libro publicado.",
           "costo": true,
           "col1": {
             "tipo": "texto",
@@ -352,7 +352,7 @@
           },
           "col3": {
             "tipo": "texto",
-            "texto": "0.01%"
+            "texto": "0.1%^6^"
           }
         }
       ]
@@ -417,7 +417,8 @@
         "Precio calculado de acuerdo al plan de pago de 12 mensualidades sin intereses.",
         "DIY: \"Hágalo-usted-mismo\". Existen herramientas de autoedición que automatizan la creación de materiales editoriales. Sin embargo los resultados dependen enteramente de tu tiempo, habilidad y experiencia para manejar dichas aplicaciones.",
         "Estas herramientas no permiten una importación adecuada de tu documento original —causando pérdidas de estilos y estructura. El caso más crítico es la imposibilidad de importar el aparato crítico de tu documento; elemento central en un texto de investigación científica.",
-        "…pendiente CREO QUE ESTO TENDRÍA QUE IR EN LAS PF"
+        "…pendiente CREO QUE ESTO TENDRÍA QUE IR EN LAS PF",
+        "https://www.marklawrence.buzz/2015/07/the-great-self-published-fantasy-blog.html?m=1"
       ],
       "ancla": "notas"
     }
