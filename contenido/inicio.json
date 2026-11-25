@@ -160,7 +160,7 @@
       "boton_secundario": "Compara tipos de publicación",
       "boton_principal_enlace": "#precios",
       "ancla": "cta",
-      "nota": "Publica tu libro con 3, 6, 9 **y hasta 12 mensualidades sin intereses.**",
+      "nota": "Publica tu libro a 3, 6, 9 **y hasta 12 mensualidades sin intereses.**",
       "tipo": "cta",
       "boton_principal": "Quiero ser un autor/a profesional",
       "boton_secundario_enlace": "#compara",
@@ -170,7 +170,7 @@
       "tipo": "precios",
       "etiqueta": "Precios",
       "titulo": "Elige tu plan:",
-      "texto": "Sin el desembolso inicial · Tu eliges tu mensualidad.",
+      "texto": "Sin el desembolso inicial · Tu eliges la mensualidad.",
       "planes": [
         {
           "enlace": "#contacto",
@@ -221,7 +221,7 @@
           "destacada": false
         }
       ],
-      "nota": "La integración de plataformas de terceros —reservas, citas, pagos, membresías— se cotiza por separado. [Consulta qué incluye tu plan y cuáles son servicios adicionales.](servicios.html)",
+      "nota": "El precio publicado considera que el documento editable se provee en las condiciones óptimas de importación. De lo contrario se sumará al costo el servicio correspondiente. [Consulta qué incluye tu plan y cuáles son servicios adicionales.](#.html)",
       "fondo_gris": true,
       "ancla": "precios"
     },
