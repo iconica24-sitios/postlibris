@@ -244,7 +244,7 @@
       "titulo": "¡Compara!",
       "filas": [
         {
-          "caracteristica": "Tu documento se importa integro (respetando estilos, estructura, etc.)",
+          "caracteristica": "Tu documento se importa integro (respetando estilos, estructura, etc.).",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -260,7 +260,7 @@
           }
         },
         {
-          "caracteristica": "No es necesario reconstruirlo con la app. del proveedor DIY^3^",
+          "caracteristica": "No es necesario reconstruirlo con la app. del proveedor DIY.^3^",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -292,7 +292,7 @@
           }
         },
         {
-          "caracteristica": "Formación y maquetación realizada por un diseñador editorial",
+          "caracteristica": "Formación y maquetación realizada por un diseñador editorial.",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -308,7 +308,7 @@
           }
         },
         {
-          "caracteristica": "Portada personalizada realizada por un diseñador especializado",
+          "caracteristica": "Portada personalizada realizada por un diseñador especializado.",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -324,23 +324,7 @@
           }
         },
         {
-          "caracteristica": "Accesibilidad e inclusión",
           "costo": false,
-          "col1": {
-            "tipo": "si",
-            "texto": "Nosotros"
-          },
-          "col2": {
-            "tipo": "si",
-            "texto": "Tú"
-          },
-          "col3": {
-            "tipo": "no",
-            "texto": "Un diseñador"
-          }
-        },
-        {
-          "costo": true,
           "col1": {
             "tipo": "texto",
             "texto": "Nosotros"
@@ -353,7 +337,23 @@
             "tipo": "texto",
             "texto": "El editor"
           },
-          "caracteristica": "Quién edita y publica tu libro"
+          "caracteristica": "**¿Quién edita y publica tu libro?**"
+        },
+        {
+          "caracteristica": "La posibilidad de ver tu libro publicado.",
+          "costo": true,
+          "col1": {
+            "tipo": "texto",
+            "texto": "100%"
+          },
+          "col2": {
+            "tipo": "texto",
+            "texto": "100%"
+          },
+          "col3": {
+            "tipo": "texto",
+            "texto": "0.01%"
+          }
         }
       ]
     },
