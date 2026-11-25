@@ -221,12 +221,12 @@
           "destacada": false
         }
       ],
-      "nota": "El precio se ofrece considerando que el documento editable se provee en las condiciones óptimas de importación. De lo contrario se sumará al costo el servicio correspondiente. [Consulta qué incluye tu plan y cuáles son servicios adicionales.](#.html)",
+      "nota": "El precio se ofrece considerando que el documento editable se provee en las condiciones óptimas de importación. De lo contrario se sumará al costo el servicio correspondiente. [Consulta qué incluye este precio, y cuáles son los servicios adicionales.](#.html)",
       "fondo_gris": true,
       "ancla": "precios"
     },
     {
-      "texto": "GraphicaWeb | Opciones \"hágalo usted mismo\" (DIY) | Diseñador/a Web",
+      "texto": "PostLibris | Opciones \"hágalo usted mismo\" (DIY) | Editor tradicional",
       "fondo_gris": true,
       "oculto": false,
       "ancla": "compara",
@@ -260,7 +260,7 @@
           }
         },
         {
-          "caracteristica": "No es necesario reconstruirlo con la herramienta del proveedor DIY^3^",
+          "caracteristica": "No es necesario reconstruirlo con la app. del proveedor DIY^3^",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -292,7 +292,23 @@
           }
         },
         {
-          "caracteristica": "El sitio es tuyo",
+          "caracteristica": "Formación y maquetación realizada por un diseñador editorial",
+          "costo": false,
+          "col1": {
+            "tipo": "si",
+            "texto": ""
+          },
+          "col2": {
+            "tipo": "no",
+            "texto": ""
+          },
+          "col3": {
+            "tipo": "si",
+            "texto": ""
+          }
+        },
+        {
+          "caracteristica": "Portada personalizada realizada por un diseñador especializado",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -309,7 +325,7 @@
         },
         {
           "caracteristica": "Accesibilidad e inclusión",
-          "costo": true,
+          "costo": false,
           "col1": {
             "tipo": "si",
             "texto": "Nosotros"
@@ -327,17 +343,17 @@
           "costo": true,
           "col1": {
             "tipo": "texto",
-            "texto": "$825^2^"
+            "texto": "Nosotros"
           },
           "col2": {
             "tipo": "texto",
-            "texto": "Tu tiempo: reconstruir el documento + costo de suscripción^3^"
+            "texto": "Tú"
           },
           "col3": {
             "tipo": "texto",
-            "texto": "50% anticipo"
+            "texto": "El editor"
           },
-          "caracteristica": "Desembolso Inicial (MXN)"
+          "caracteristica": "Quién edita y publica tu libro"
         }
       ]
     },
