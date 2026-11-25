@@ -235,7 +235,7 @@
         "etiqueta": "(Recomendado)"
       },
       "col2": {
-        "nombre": "Soluciones tipo DIY^2^ (autoedición)"
+        "nombre": "Soluciones tipo DIY^3^ (autoedición)"
       },
       "col3": {
         "nombre": "Editorial Tradicional"
@@ -244,7 +244,7 @@
       "titulo": "¡Compara!",
       "filas": [
         {
-          "caracteristica": "Se trabaja sobre la estructura original de tu documento^3^",
+          "caracteristica": "Se trabaja sobre la estructura original de tu documento^4^",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -260,7 +260,7 @@
           }
         },
         {
-          "caracteristica": "Garantía contra herramienta de detección de I.A.^4^",
+          "caracteristica": "Garantía contra herramienta de detección de I.A.^5^",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -292,18 +292,18 @@
           }
         },
         {
-          "caracteristica": "¿Quién la hace?",
+          "caracteristica": "Accesibilidad e inclusión",
           "costo": true,
           "col1": {
-            "tipo": "texto",
+            "tipo": "si",
             "texto": "Nosotros"
           },
           "col2": {
-            "tipo": "texto",
+            "tipo": "si",
             "texto": "Tú"
           },
           "col3": {
-            "tipo": "texto",
+            "tipo": "no",
             "texto": "Un diseñador"
           }
         },
@@ -311,11 +311,11 @@
           "costo": true,
           "col1": {
             "tipo": "texto",
-            "texto": "$369^4^"
+            "texto": "$825^2^"
           },
           "col2": {
             "tipo": "texto",
-            "texto": "Tu tiempo + la suscripción^2^"
+            "texto": "Tu tiempo: reconstruir el documento + costo de suscripción^3^"
           },
           "col3": {
             "tipo": "texto",
@@ -382,10 +382,10 @@
       "tipo": "notas",
       "lista": [
         "Precios en pesos mexicanos. Mensualidades sin intereses disponibles con tarjetas de crédito participantes; los plazos que puedas usar dependen de tu banco y se muestran al momento de pagar.",
-        "DIY: \"Hágalo-usted-mismo\". Existen herramientas de autoedición que automatizan la creación de materiales editoriales. Sin embargo los resultados dependen enteramente de tu tiempo, habilidad y experiencia para manejar las aplicaciones.",
-        "Estas herramientas no permiten una importación adecuada de tu documento original —causando pérdidas de estilos y estructura. El caso más crítico es la imposibilidad de importar el aparato crítico de tu documento; elemento central en un texto de investigación científica.",
         "Precio calculado de acuerdo al plan de pago de 12 mensualidades sin intereses.",
-        "Plazo de 24 horas contado desde que recibimos tu contenido completo —textos, imágenes, servicios, horarios, etc."
+        "DIY: \"Hágalo-usted-mismo\". Existen herramientas de autoedición que automatizan la creación de materiales editoriales. Sin embargo los resultados dependen enteramente de tu tiempo, habilidad y experiencia para manejar dichas aplicaciones.",
+        "Estas herramientas no permiten una importación adecuada de tu documento original —causando pérdidas de estilos y estructura. El caso más crítico es la imposibilidad de importar el aparato crítico de tu documento; elemento central en un texto de investigación científica.",
+        "…pendiente CREO QUE ESTO TENDRÍA QUE IR EN LAS PF"
       ],
       "ancla": "notas"
     }
