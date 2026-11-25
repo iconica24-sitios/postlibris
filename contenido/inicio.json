@@ -231,14 +231,14 @@
       "oculto": false,
       "ancla": "compara",
       "col1": {
-        "nombre": "GraphicaWeb",
-        "etiqueta": "Te conviene"
+        "nombre": "PostLibris",
+        "etiqueta": "(Recomendado)"
       },
       "col2": {
         "nombre": "Soluciones tipo DIY^2^"
       },
       "col3": {
-        "nombre": "Encargo por Diseño"
+        "nombre": "Editorial Tradicional"
       },
       "tipo": "compara",
       "titulo": "¡Compara!",
