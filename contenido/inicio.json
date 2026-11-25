@@ -244,7 +244,7 @@
       "titulo": "¡Compara!",
       "filas": [
         {
-          "caracteristica": "Se trabaja sobre la estructura original de tu documento^4^",
+          "caracteristica": "Tu documento se importa integro (respetando estilos, estructura, etc.)",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -260,7 +260,23 @@
           }
         },
         {
-          "caracteristica": "Garantía contra herramienta de detección de I.A.^5^",
+          "caracteristica": "No es necesario reconstruirlo con la herramienta del proveedor DIY^3^",
+          "costo": false,
+          "col1": {
+            "tipo": "si",
+            "texto": ""
+          },
+          "col2": {
+            "tipo": "no",
+            "texto": ""
+          },
+          "col3": {
+            "tipo": "si",
+            "texto": ""
+          }
+        },
+        {
+          "caracteristica": "Garantía contra herramientas de detección de I.A.^5^",
           "costo": false,
           "col1": {
             "tipo": "si",
