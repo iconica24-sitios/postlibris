@@ -244,7 +244,7 @@
       "titulo": "¡Compara!",
       "filas": [
         {
-          "caracteristica": "Tu documento se importa integro (respetando estilos, estructura, etc.).",
+          "caracteristica": "Tu documento se importa íntegro (respetando estilos, estructura, etc.).",
           "costo": false,
           "col1": {
             "tipo": "si",
