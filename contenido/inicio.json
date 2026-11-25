@@ -244,7 +244,7 @@
       "titulo": "¡Compara!",
       "filas": [
         {
-          "caracteristica": "Se trabaja con la estructura original de tu documento^3^",
+          "caracteristica": "Se trabaja sobre la estructura original de tu documento^3^",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -260,18 +260,18 @@
           }
         },
         {
-          "caracteristica": "Alojamiento incluido^3^",
+          "caracteristica": "Garantía contra herramienta de detección de I.A.^4^",
           "costo": false,
           "col1": {
             "tipo": "si",
             "texto": ""
           },
           "col2": {
-            "tipo": "si",
+            "tipo": "no",
             "texto": ""
           },
           "col3": {
-            "tipo": "no",
+            "tipo": "si",
             "texto": ""
           }
         },
