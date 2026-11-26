@@ -221,7 +221,7 @@
           "destacada": false
         }
       ],
-      "nota": "El precio se ofrece considerando que el documento editable se provee en ==buenas condiciones de importación.== De lo contrario se sumará al costo el servicio correspondiente. [Consulta qué incluye este precio, y cuáles son los servicios adicionales.](#.html)",
+      "nota": "El precio se ofrece considerando que el documento editable se provee en ==buenas condiciones de importación.== De lo contrario se agregará el costo del servicio correspondiente. [Consulta qué incluye este precio, y cuáles son los servicios adicionales.](#.html)",
       "fondo_gris": true,
       "ancla": "precios"
     },
