@@ -244,7 +244,7 @@
       "titulo": "¡Compara!",
       "filas": [
         {
-          "caracteristica": "Se importa el texto de tu documento, sin tener que reconstruir el contenido.^3^",
+          "caracteristica": "Se importa el contenido de tu documento, sin tener que reconstruir su estructura.^3^",
           "costo": false,
           "col1": {
             "tipo": "si",
