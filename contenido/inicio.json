@@ -244,7 +244,7 @@
       "titulo": "¡Compara!",
       "filas": [
         {
-          "caracteristica": "Tu documento se importa íntegro (respetando estilos, estructura, etc.).",
+          "caracteristica": "Se importa el texto de tu documento, sin tener que reconstruir el contenido.^3^",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -253,22 +253,6 @@
           "col2": {
             "tipo": "no",
             "texto": ""
-          },
-          "col3": {
-            "tipo": "si",
-            "texto": ""
-          }
-        },
-        {
-          "caracteristica": "No es necesario reconstruirlo con la app. del proveedor DIY.^3^",
-          "costo": false,
-          "col1": {
-            "tipo": "si",
-            "texto": ""
-          },
-          "col2": {
-            "tipo": "no",
-            "texto": "Es necesario reconstruir"
           },
           "col3": {
             "tipo": "si",
