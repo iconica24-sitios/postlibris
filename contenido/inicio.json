@@ -244,38 +244,6 @@
       "titulo": "¡Compara!",
       "filas": [
         {
-          "caracteristica": "Se conserva el contenido de tu documento, sin tener que reconstruir su estructura.^3^",
-          "costo": false,
-          "col1": {
-            "tipo": "si",
-            "texto": ""
-          },
-          "col2": {
-            "tipo": "no",
-            "texto": ""
-          },
-          "col3": {
-            "tipo": "si",
-            "texto": ""
-          }
-        },
-        {
-          "caracteristica": "Garantía contra herramientas de detección de I.A.^5^",
-          "costo": false,
-          "col1": {
-            "tipo": "si",
-            "texto": ""
-          },
-          "col2": {
-            "tipo": "no",
-            "texto": ""
-          },
-          "col3": {
-            "tipo": "si",
-            "texto": ""
-          }
-        },
-        {
           "caracteristica": "Formación editorial realizada por un diseñador profesional.",
           "costo": false,
           "col1": {
@@ -293,6 +261,22 @@
         },
         {
           "caracteristica": "Portada personalizada realizada por un diseñador especializado.",
+          "costo": false,
+          "col1": {
+            "tipo": "si",
+            "texto": ""
+          },
+          "col2": {
+            "tipo": "no",
+            "texto": ""
+          },
+          "col3": {
+            "tipo": "si",
+            "texto": ""
+          }
+        },
+        {
+          "caracteristica": "Garantía contra herramientas de detección de I.A.^5^",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -358,8 +342,8 @@
           "respuesta": "Sí, totalmente. Para procesar el pago trabajamos con Stripe, una reconocida plataforma de pagos que verifica la identidad y el estatus legal y fiscal de todos los comercios que utilizan su pasarela. Stripe es un intermediario comercial de presencia global que ofrece a nuestros clientes la certeza de que sus pagos están protegidos mediante transacciones seguras. Además, a través de ella gestionamos la devolución íntegra del importe si el cliente no queda plenamente satisfecho con el servicio de acuerdo a nuestras políticas de devolución."
         },
         {
-          "pregunta": "La autoedición es desproporcionadamente más económica. ¿No es una locura elegir la propuesta aquí ofrecida?",
-          "respuesta": "Sería una locura si el costo de la autoedición incluyera el servicio de edición/publicación. Es todo lo contrario: en las plataformas de autoedición, como su nombre lo indica, quien hace el trabajo eres tú. Por eso el costo parece tan bajo: en realidad no están ofreciendo ningún servicio, solo proporcionan el software (en línea) para que cada usuario haga su propio libro.\n\nSi tú, como usuario, tienes la experiencia, la habilidad y, sobre todo, el tiempo para editar tu propio libro, entonces la autoedición es la opción adecuada. De lo contrario, lo que suele suceder es que quienes optan por esta alternativa terminan contratando a un freelance para que les termine el trabajo. Con una desventaja: los software de edición que ofrecen estas plataformas no cumplen con el estándar de la industria. Dichos recursos son aplicaciones simplificadas, precisamente, para que toda persona pueda hacer su propia edición. Cuanto más simplificado es el programa, menos funcionalidades se tienen al momento de requerir una edición verdaderamente profesional."
+          "pregunta": "La autoedición, como alternativa, es mucho más económica. ¿No es demasiado costoso elegir la propuesta aquí ofrecida?",
+          "respuesta": "Los servicios de autoedición serían una alternativa muy económica si el costo de la autoedición incluyera el servicio de edición/publicación. En las soluciones \"DIY\" (hágalo usted mismo) se trata de todo lo contrario: en las mencionadas plataformas de autoedición, como su nombre lo indica, quien hace el trabajo eres tú. Por eso el costo parece tan bajo: en realidad no están ofreciendo ningún servicio, solo proporcionan el software (en línea) para que cada usuario/a haga su propio libro.\n\nSi tú, como usuario, tienes la experiencia, la habilidad y, sobre todo, el tiempo para editar tu propio libro, entonces la autoedición es la opción adecuada. De lo contrario, lo que suele suceder es que quienes optan por esta alternativa terminan contratando a un freelance para que les termine el trabajo. Con una desventaja: los software de edición que ofrecen estas plataformas no cumplen con el estándar de la industria. Dichos recursos son aplicaciones simplificadas, precisamente, para que toda persona pueda hacer su propia edición. Cuanto más simplificado es el programa, menos funcionalidades se tienen al momento de requerir una edición verdaderamente profesional. Al final, lo que suele suceder, es que el editor, o editora, tiene que empezar de nuevo.^4^"
         },
         {
           "pregunta": "¿Por qué no optar entonces por una casa editorial tradicional?",
