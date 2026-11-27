@@ -25,30 +25,30 @@
       "tipo": "hero",
       "boton_principal": "Cómo funciona",
       "boton_secundario_enlace": "#faq",
-      "subtitulo": "Convierte tu tesis de licenciatura, posgrado —o cualquier otro texto— ==en una obra profesional, **editada y lista para su publicación.**==",
-      "titulo": "Tener un libro publicado eleva tu currículum."
+      "subtitulo": "Convierte tu tesis de licenciatura, posgrado —u otro manuscrito— ==en una obra profesional, **editada y lista para su publicación.**==",
+      "titulo": "Tener un libro publicado eleva tu imagen."
     },
     {
       "tipo": "pasos",
-      "titulo": "Publica tu tesis o manuscrito en 3 sencillos pasos:",
+      "titulo": "Publica tu tesis o manuscrito en 3 elementales pasos:",
       "texto": "",
       "tarjetas": [
         {
           "etiqueta": "Contenido",
-          "titulo": "01. Sube tu tesis o manuscrito",
-          "texto": "En el formato original de trabajo editable (Word, Docs, Pages, etc.). El archivo lo puedes subir comprimido en un ZIP.",
+          "titulo": "01. Sube tu contenido",
+          "texto": "En el formato original de trabajo editable (Word, Docs, Pages, etc.). ==Uno de **nuestros editores** te contactará para afinar detalles.== Puedes subir tu archivo comprimido en un ZIP.",
           "icono": "upload"
         },
         {
           "etiqueta": "Formación Editorial y Diseño",
-          "titulo": "02. Convertimos tu texto en un libro",
-          "texto": "Una vez acordados los aspectos formales tales como portada, título, capitulado, índice, bibliografía, etc., continuamos con la edición.",
+          "titulo": "02. Recibe tu libro",
+          "texto": "Una vez aplicados los aspectos formales tales como portada, título, capitulado, índice, bibliografía, etc., **te mandamos un PDF con el libro terminado** para tu visto bueno.",
           "icono": "menu_book"
         },
         {
           "etiqueta": "ISBN",
-          "titulo": "03. Lo registras ante el INDAUTOR",
-          "texto": "Como autor independiente, puedes registrar tu libro ante el INDAUTOR y obtener tu código ISBN sin costo alguno.",
+          "titulo": "03. Hazlo oficial",
+          "texto": "Como autor independiente, puedes registrar tu libro ante el INDAUTOR y obtener tu código ISBN sin costo alguno. Si lo prefieres, nosotros podemos gestionar el trámite.",
           "icono": "barcode"
         }
       ],
@@ -160,7 +160,7 @@
       "boton_secundario": "Compara tipos de publicación",
       "boton_principal_enlace": "#precios",
       "ancla": "cta",
-      "nota": "Publica tu libro con 3, 6, 9 **y hasta 12 mensualidades sin intereses.**",
+      "nota": "Publica tu libro a 3, 6, 9 **y hasta 12 mensualidades sin intereses.**",
       "tipo": "cta",
       "boton_principal": "Quiero ser un autor/a profesional",
       "boton_secundario_enlace": "#compara",
@@ -170,11 +170,11 @@
       "tipo": "precios",
       "etiqueta": "Precios",
       "titulo": "Elige tu plan:",
-      "texto": "Sin el desembolso inicial · Tu eliges tu mensualidad.",
+      "texto": "Sin el desembolso inicial · Tu eliges la mensualidad.",
       "planes": [
         {
           "enlace": "#contacto",
-          "total": "$9,900",
+          "total": "$9,900^1^",
           "boton": "Comprar",
           "caracteristicas": [
             "Formación electrónica",
@@ -221,30 +221,30 @@
           "destacada": false
         }
       ],
-      "nota": "La integración de plataformas de terceros —reservas, citas, pagos, membresías— se cotiza por separado. [Consulta qué incluye tu plan y cuáles son servicios adicionales.](servicios.html)",
+      "nota": "El precio se ofrece considerando que el documento editable se provee en ==buenas condiciones de importación.== De lo contrario se agregará el costo del servicio correspondiente. [Consulta qué incluye este precio, y cuáles son los servicios adicionales.](#.html)",
       "fondo_gris": true,
       "ancla": "precios"
     },
     {
-      "texto": "GraphicaWeb | Opciones \"hágalo usted mismo\" (DIY) | Diseñador/a Web",
+      "texto": "PostLibris | Opciones \"hágalo usted mismo\" (DIY) | Editor tradicional",
       "fondo_gris": true,
       "oculto": false,
       "ancla": "compara",
       "col1": {
-        "nombre": "GraphicaWeb",
-        "etiqueta": "Te conviene"
+        "nombre": "PostLibris",
+        "etiqueta": "(Recomendado)"
       },
       "col2": {
-        "nombre": "Soluciones tipo DIY^2^"
+        "nombre": "Soluciones tipo DIY^3^ (autoedición)"
       },
       "col3": {
-        "nombre": "Encargo por Diseño"
+        "nombre": "Editorial Tradicional"
       },
       "tipo": "compara",
       "titulo": "¡Compara!",
       "filas": [
         {
-          "caracteristica": "Sin curva de aprendizaje (DIY)",
+          "caracteristica": "Se conserva el contenido de tu documento, sin tener que reconstruir su estructura.^3^",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -260,39 +260,7 @@
           }
         },
         {
-          "caracteristica": "Autoeditable",
-          "costo": false,
-          "col1": {
-            "tipo": "si",
-            "texto": ""
-          },
-          "col2": {
-            "tipo": "si",
-            "texto": ""
-          },
-          "col3": {
-            "tipo": "no",
-            "texto": ""
-          }
-        },
-        {
-          "caracteristica": "Alojamiento incluido^3^",
-          "costo": false,
-          "col1": {
-            "tipo": "si",
-            "texto": ""
-          },
-          "col2": {
-            "tipo": "si",
-            "texto": ""
-          },
-          "col3": {
-            "tipo": "no",
-            "texto": ""
-          }
-        },
-        {
-          "caracteristica": "El sitio es tuyo",
+          "caracteristica": "Garantía contra herramientas de detección de I.A.^5^",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -308,8 +276,39 @@
           }
         },
         {
-          "caracteristica": "¿Quién la hace?",
-          "costo": true,
+          "caracteristica": "Formación editorial realizada por un diseñador profesional.",
+          "costo": false,
+          "col1": {
+            "tipo": "si",
+            "texto": ""
+          },
+          "col2": {
+            "tipo": "no",
+            "texto": ""
+          },
+          "col3": {
+            "tipo": "si",
+            "texto": ""
+          }
+        },
+        {
+          "caracteristica": "Portada personalizada realizada por un diseñador especializado.",
+          "costo": false,
+          "col1": {
+            "tipo": "si",
+            "texto": ""
+          },
+          "col2": {
+            "tipo": "no",
+            "texto": ""
+          },
+          "col3": {
+            "tipo": "si",
+            "texto": ""
+          }
+        },
+        {
+          "costo": false,
           "col1": {
             "tipo": "texto",
             "texto": "Nosotros"
@@ -320,24 +319,25 @@
           },
           "col3": {
             "tipo": "texto",
-            "texto": "Un diseñador"
-          }
+            "texto": "El editor"
+          },
+          "caracteristica": "**¿Quién edita y publica tu libro?**"
         },
         {
+          "caracteristica": "Viabilidad de ver tu libro publicado.",
           "costo": true,
           "col1": {
             "tipo": "texto",
-            "texto": "$369^4^"
+            "texto": "== 100% =="
           },
           "col2": {
             "tipo": "texto",
-            "texto": "Tu tiempo + la suscripción^2^"
+            "texto": "50%"
           },
           "col3": {
             "tipo": "texto",
-            "texto": "50% anticipo"
-          },
-          "caracteristica": "Desembolso Inicial (MXN)"
+            "texto": "1%^6^"
+          }
         }
       ]
     },
@@ -346,36 +346,24 @@
       "titulo": "Preguntas frecuentes",
       "preguntas": [
         {
-          "pregunta": "¿Cuál es la ventaja de hacer mi página con GraphicaWeb?",
+          "pregunta": "¿Por qué hoy en día es tan importante tener al menos un libro publicado?",
+          "respuesta": "Un libro publicado puede ser tan relevante como un grado o un posgrado académico. En realidad ambos logros se coordinan en un sistema de prestigio que se complementa: Se espera que una persona que ya cuenta con un grado y, en especial, un posgrado, haya publicado al menos un libro en su vida académica o profesional.\n\nLo mismo se puede decir de un autor o autora de un texto académico (o texto de \"no-ficción\"). En este caso, el grado académico es tan importante como el texto publicado. La autenticidad del texto queda garantizada por virtud del grado académico de su titular."
+        },
+        {
+          "pregunta": "¿Qué servicios de publicación están incluidos en el precio?",
           "respuesta": "Cuando llega el momento de tener tu propia página web, usualmente tienes dos opciones: contratar a un diseñador/a (bajo el típico esquema del 50% de anticipo, 50% contra entrega) o entrarle a hacer tu propio diseño con alguna de las grandes plataformas del \"hágalo usted mismo\" ( DIY).\n\n**GraphicaWeb** se presenta como una opción más conveniente. Haces un primer pago, que puede ser hasta de $825 MXN (a 12 meses sin intereses). ==Con nosotros te olvidas de anticipos del 50%, obtienes tu sitio listo y en línea en 24 hrs.,== y te ahorras la curva de aprendizaje del «hágalo usted mismo»; que suele ser mucho más pronunciada —y dilatada— de lo que te parece."
         },
         {
-          "pregunta": "¿Que te entregamos?",
-          "respuesta": "**Tu sitio.** Inicialmente obtienes una landing page responsiva con menú de navegación interna. Adicionalmente es posible agregar tantas páginas subsecuentes como sea necesario, vinculadas éstas a sus respectivos ítems de menú.\n\n**El diseño.** Tu sitio se construye sobre nuestro sistema modular de diseño, configurado según la estrategia comercial de tu negocio. Es un sistema editable, capaz de crecer y adaptarse conforme lo necesites.\n\n**La integración.** Un diseñador adapta tus contenidos —textos e imágenes— a ese sistema, sobre el diseño que hayas aprobado.\n\n**La operación.** Publicación de tu sitio, 12 meses de alojamiento con respaldos y mantenimiento, y acceso a tu panel para editar textos e imágenes cuando quieras."
+          "pregunta": "¿Qué pasa si no tengo tesis alguna, aún puedo publicar mi manuscrito?",
+          "respuesta": "Cuando llega el momento de tener tu propia página web, usualmente tienes dos opciones: contratar a un diseñador/a (bajo el típico esquema del 50% de anticipo, 50% contra entrega) o entrarle a hacer tu propio diseño con alguna de las grandes plataformas del \"hágalo usted mismo\" ( DIY).\n\n**GraphicaWeb** se presenta como una opción más conveniente. Haces un primer pago, que puede ser hasta de $825 MXN (a 12 meses sin intereses). ==Con nosotros te olvidas de anticipos del 50%, obtienes tu sitio listo y en línea en 24 hrs.,== y te ahorras la curva de aprendizaje del «hágalo usted mismo»; que suele ser mucho más pronunciada —y dilatada— de lo que te parece."
         },
         {
-          "pregunta": "¿Necesito un nombre de dominio?",
-          "respuesta": "Sí, es lo recomendable. Si ya tienes uno, lo apuntas a nuestros servidores desde la cuenta de tu proveedor. Es muy fácil. Si no cuentas con uno, te orientamos para registrarlo a tu nombre con el proveedor que tú nos indiques."
+          "pregunta": "La autoedición es desproporcionadamente más económica. ¿No es una locura elegir la propuesta aquí ofrecida?",
+          "respuesta": "Cuando llega el momento de tener tu propia página web, usualmente tienes dos opciones: contratar a un diseñador/a (bajo el típico esquema del 50% de anticipo, 50% contra entrega) o entrarle a hacer tu propio diseño con alguna de las grandes plataformas del \"hágalo usted mismo\" ( DIY).\n\n**GraphicaWeb** se presenta como una opción más conveniente. Haces un primer pago, que puede ser hasta de $825 MXN (a 12 meses sin intereses). ==Con nosotros te olvidas de anticipos del 50%, obtienes tu sitio listo y en línea en 24 hrs.,== y te ahorras la curva de aprendizaje del «hágalo usted mismo»; que suele ser mucho más pronunciada —y dilatada— de lo que te parece."
         },
         {
-          "pregunta": "¿Debo indicar algún ejemplo de diseño web?",
-          "respuesta": "Es lo más conveniente. Nos sirve para entender tu estilo y partir de una referencia concreta en lugar de una descripción. El resultado es un diseño propio, adaptado a tu negocio, no una copia del sitio que nos muestres."
-        },
-        {
-          "respuesta": "Sí. 24 horas desde que recibimos tu contenido completo —textos, imágenes, servicios, horarios, etc. Te mandamos un formulario guiado que te dice exactamente lo qué necesitamos.",
-          "pregunta": "¿De verdad en 24 horas?"
-        },
-        {
-          "pregunta": "¿Puedo editar textos y subir, cambiar o quitar imágenes?",
-          "respuesta": "Sí. Al entrar con tu usuario y contraseña al administrador del sitio, podrás cambiar textos, precios, fotos y horarios como lo haces en cualquier otro documento. Gracias a la arquitectura de nuestro sistema, no es posible alterar la estructura de la plantilla. De esta forma, puedes agregar los contenidos que tu quieras, sin romper el diseño."
-        },
-        {
-          "pregunta": "¿Puedo agregar reservaciones, suscripciones o pagos en línea?",
-          "respuesta": "Sí. Es posible integrar tu sitio con la plataforma que ya uses, o te ayudamos a elegir una. Estas herramientas las contratas por tu cuenta. [El costo de su integración es adicional a los precios aquí mostrados.](/servicios.html)"
-        },
-        {
-          "pregunta": "¿Puedo mudar mi sitio y llevarlo con otro proveedor?",
-          "respuesta": "Sí, tu sitio está construido sobre HTML, CSS y JavaScript, que son estándares de la industria, así que los archivos son transferibles y los puedes subir con el proveedor que elijas. Lo que no viaja es el panel de edición, que es parte de nuestra plataforma."
+          "pregunta": "¿Por qué no optar por una casa editorial tradicional entonces?",
+          "respuesta": "Cuando llega el momento de tener tu propia página web, usualmente tienes dos opciones: contratar a un diseñador/a (bajo el típico esquema del 50% de anticipo, 50% contra entrega) o entrarle a hacer tu propio diseño con alguna de las grandes plataformas del \"hágalo usted mismo\" ( DIY).\n\n**GraphicaWeb** se presenta como una opción más conveniente. Haces un primer pago, que puede ser hasta de $825 MXN (a 12 meses sin intereses). ==Con nosotros te olvidas de anticipos del 50%, obtienes tu sitio listo y en línea en 24 hrs.,== y te ahorras la curva de aprendizaje del «hágalo usted mismo»; que suele ser mucho más pronunciada —y dilatada— de lo que te parece."
         }
       ],
       "fondo_gris": false,
@@ -398,10 +386,11 @@
       "tipo": "notas",
       "lista": [
         "Precios en pesos mexicanos. Mensualidades sin intereses disponibles con tarjetas de crédito participantes; los plazos que puedas usar dependen de tu banco y se muestran al momento de pagar.",
-        "DIY: \"Hágalo-usted-mismo\". Con constructores tipo Wix, WebFlow, Squarespace, Canva, etc., el costo mensual es una renta permanente y el diseño y creación del sitio dependen enteramente de tu tiempo, habilidad y experiencia para manejar la plataforma. Los archivos no son tuyos y no se pueden mover a otro proveedor.",
-        "Primer año incluido; después, $269 al mes.",
         "Precio calculado de acuerdo al plan de pago de 12 mensualidades sin intereses.",
-        "Plazo de 24 horas contado desde que recibimos tu contenido completo —textos, imágenes, servicios, horarios, etc."
+        "DIY: \"Hágalo-usted-mismo\". Existen herramientas de autoedición que automatizan la creación de materiales editoriales. Sin embargo los resultados dependen enteramente de tu tiempo, habilidad y experiencia para manejar dichas aplicaciones.",
+        "Estas herramientas no permiten una importación adecuada de tu documento original —causando pérdidas de estilos y estructura. El caso más grave es la imposibilidad de importar el aparato crítico de tu documento; elemento central en un texto de investigación científica.",
+        "…pendiente CREO QUE ESTO TENDRÍA QUE IR EN LAS PF es decir, las preguntas frecuentes.",
+        "\"The rejection percentage of manuscripts submitted by unpublished and non-celebrity authors to agents is widely accepted to be between 95% and 99%.\" (Montgomery, Andrea. URL: https://bit.ly/4AeaUHo)"
       ],
       "ancla": "notas"
     }
