@@ -25,12 +25,12 @@
       "tipo": "hero",
       "boton_principal": "Cómo funciona",
       "boton_secundario_enlace": "#faq",
-      "subtitulo": "Convierte tu tesis de licenciatura, posgrado —u otro manuscrito— ==en una obra profesional, **editada y lista para su publicación.**==",
-      "titulo": "Escribir un libro te vuelve importante."
+      "subtitulo": "Convierte tu tesis de licenciatura, posgrado o cualquier otro manuscrito ==en una obra profesional, **editada y lista para su publicación.**==",
+      "titulo": "Tener un libro publicado te da prestigio."
     },
     {
       "tipo": "pasos",
-      "titulo": "Publica tu tesis o manuscrito en 3 sencillos pasos:",
+      "titulo": "Publica tu libro en 3 pasos:",
       "texto": "",
       "tarjetas": [
         {
