@@ -25,12 +25,12 @@
       "tipo": "hero",
       "boton_principal": "Cómo funciona",
       "boton_secundario_enlace": "#faq",
-      "subtitulo": "Convierte tu tesis de licenciatura, posgrado —u otro manuscrito— ==en una obra profesional, **editada y lista para su publicación.**==",
-      "titulo": "Tener un libro publicado eleva tu imagen."
+      "subtitulo": "Convierte tu tesis de licenciatura, posgrado o cualquier otro manuscrito ==en una obra profesional, **editada y lista para su publicación.**==",
+      "titulo": "Tener un libro publicado te da prestigio."
     },
     {
       "tipo": "pasos",
-      "titulo": "Publica tu tesis o manuscrito en 3 elementales pasos:",
+      "titulo": "Publica tu libro en 3 pasos:",
       "texto": "",
       "tarjetas": [
         {
@@ -42,7 +42,7 @@
         {
           "etiqueta": "Formación Editorial y Diseño",
           "titulo": "02. Recibe tu libro",
-          "texto": "Una vez aplicados los aspectos formales tales como portada, título, capitulado, índice, bibliografía, etc., **te mandamos un PDF con el libro terminado** para tu visto bueno.",
+          "texto": "Una vez aplicados los aspectos formales tales como portada, título, capitulado, índice, bibliografía, etc., **te mandamos un PDF con el libro terminado** listo para su publicación.",
           "icono": "menu_book"
         },
         {
@@ -208,14 +208,14 @@
         {
           "enlace": "#contacto",
           "boton": "Comprar",
-          "precio": "$9,900",
+          "precio": "$26,900",
           "nombre": "Contado",
           "caracteristicas": [
             "Todo lo incluído en el plan a mensualidades",
             "==Descuento del 12.5%== al pagar con el cupón: \"CONTADO\""
           ],
           "periodo": "MXN",
-          "cobro": "Precio de contado: $9,900^1^",
+          "cobro": "Precio de contado: $26,900^1^",
           "tipo": "fijo",
           "insignia": "",
           "destacada": false
@@ -244,38 +244,6 @@
       "titulo": "¡Compara!",
       "filas": [
         {
-          "caracteristica": "Se conserva el contenido de tu documento, sin tener que reconstruir su estructura.^3^",
-          "costo": false,
-          "col1": {
-            "tipo": "si",
-            "texto": ""
-          },
-          "col2": {
-            "tipo": "no",
-            "texto": ""
-          },
-          "col3": {
-            "tipo": "si",
-            "texto": ""
-          }
-        },
-        {
-          "caracteristica": "Garantía contra herramientas de detección de I.A.^5^",
-          "costo": false,
-          "col1": {
-            "tipo": "si",
-            "texto": ""
-          },
-          "col2": {
-            "tipo": "no",
-            "texto": ""
-          },
-          "col3": {
-            "tipo": "si",
-            "texto": ""
-          }
-        },
-        {
           "caracteristica": "Formación editorial realizada por un diseñador profesional.",
           "costo": false,
           "col1": {
@@ -293,6 +261,22 @@
         },
         {
           "caracteristica": "Portada personalizada realizada por un diseñador especializado.",
+          "costo": false,
+          "col1": {
+            "tipo": "si",
+            "texto": ""
+          },
+          "col2": {
+            "tipo": "no",
+            "texto": ""
+          },
+          "col3": {
+            "tipo": "si",
+            "texto": ""
+          }
+        },
+        {
+          "caracteristica": "Garantía contra herramientas de detección de I.A.^5^",
           "costo": false,
           "col1": {
             "tipo": "si",
@@ -346,24 +330,28 @@
       "titulo": "Preguntas frecuentes",
       "preguntas": [
         {
-          "pregunta": "¿Por qué hoy en día es tan importante tener al menos un libro publicado?",
-          "respuesta": "Un libro publicado puede ser tan relevante como un grado o un posgrado académico. En realidad ambos logros se coordinan en un sistema de prestigio que se complementa: Se espera que una persona que ya cuenta con un grado y, en especial, un posgrado, haya publicado al menos un libro en su vida académica o profesional.\n\nLo mismo se puede decir de un autor o autora de un texto académico (o texto de \"no-ficción\"). En este caso, el grado académico es tan importante como el texto publicado. La autenticidad del texto queda garantizada por virtud del grado académico de su titular."
+          "pregunta": "¿Por qué hoy en día es tan importante tener, al menos, un libro publicado?",
+          "respuesta": "Vivimos tiempos de una enorme competencia. Contar con más de un grado académico, experiencia laboral de alta dirección y dominar uno o dos idiomas, se ha vuelto la norma.\n\nPara quienes aún no tienen ese amplio reconocimiento público, ni una trayectoria profesional comprobada, o simplemente necesitan proyectar tales atributos \"a priori\", tener un libro publicado que los presente como especialistas en su propio campo de acción puede ser el camino —o el atajo— para construir esa imagen pública y profesional indispensable."
         },
         {
-          "pregunta": "¿Qué servicios de publicación están incluidos en el precio?",
-          "respuesta": "Cuando llega el momento de tener tu propia página web, usualmente tienes dos opciones: contratar a un diseñador/a (bajo el típico esquema del 50% de anticipo, 50% contra entrega) o entrarle a hacer tu propio diseño con alguna de las grandes plataformas del \"hágalo usted mismo\" ( DIY).\n\n**GraphicaWeb** se presenta como una opción más conveniente. Haces un primer pago, que puede ser hasta de $825 MXN (a 12 meses sin intereses). ==Con nosotros te olvidas de anticipos del 50%, obtienes tu sitio listo y en línea en 24 hrs.,== y te ahorras la curva de aprendizaje del «hágalo usted mismo»; que suele ser mucho más pronunciada —y dilatada— de lo que te parece."
+          "pregunta": "¿Qué servicios de publicación están incluidos en la presente oferta?",
+          "respuesta": "Publicar, imprimir y distribuir son tres fases distintas dentro del proceso de difusión de un libro profesional.\n\nPublicar es el acto integral de convertir un manuscrito en un producto editorial con identidad propia (implica la edición, el registro legal y la decisión de ofrecerlo al mercado); imprimir es solo la fabricación física de los ejemplares; y distribuir es la logística de hacer llegar esos ejemplares a los establecimientos comerciales con quienes la casa editorial mantiene un convenio de exhibición y comercialización.\n\nEl servicio que ofrecemos en la presente página se refiere únicamente a la primera fase e incluye: formación electrónica, maquetación, diseño de portada y contraportada, entrega de originales electrónicos para su impresión, y gestión del ISBN a nombre y en representación de la persona titular de la obra."
         },
         {
-          "pregunta": "¿Qué pasa si no tengo tesis alguna, aún puedo publicar mi manuscrito?",
-          "respuesta": "Cuando llega el momento de tener tu propia página web, usualmente tienes dos opciones: contratar a un diseñador/a (bajo el típico esquema del 50% de anticipo, 50% contra entrega) o entrarle a hacer tu propio diseño con alguna de las grandes plataformas del \"hágalo usted mismo\" ( DIY).\n\n**GraphicaWeb** se presenta como una opción más conveniente. Haces un primer pago, que puede ser hasta de $825 MXN (a 12 meses sin intereses). ==Con nosotros te olvidas de anticipos del 50%, obtienes tu sitio listo y en línea en 24 hrs.,== y te ahorras la curva de aprendizaje del «hágalo usted mismo»; que suele ser mucho más pronunciada —y dilatada— de lo que te parece."
+          "pregunta": "Una vez realizado el pago, ¿están garantizados el servicio y la entrega prometida?",
+          "respuesta": "Sí, totalmente. Para procesar el pago trabajamos con Stripe, una reconocida plataforma de pagos que verifica la identidad y el estatus legal y fiscal de todos los comercios que utilizan su pasarela. Stripe es un intermediario comercial de presencia global que ofrece a nuestros clientes la certeza de que sus pagos están protegidos mediante transacciones seguras. Además, a través de ella gestionamos la devolución íntegra del importe si el cliente no queda plenamente satisfecho con el servicio de acuerdo a nuestras políticas de devolución."
         },
         {
-          "pregunta": "La autoedición es desproporcionadamente más económica. ¿No es una locura elegir la propuesta aquí ofrecida?",
-          "respuesta": "Cuando llega el momento de tener tu propia página web, usualmente tienes dos opciones: contratar a un diseñador/a (bajo el típico esquema del 50% de anticipo, 50% contra entrega) o entrarle a hacer tu propio diseño con alguna de las grandes plataformas del \"hágalo usted mismo\" ( DIY).\n\n**GraphicaWeb** se presenta como una opción más conveniente. Haces un primer pago, que puede ser hasta de $825 MXN (a 12 meses sin intereses). ==Con nosotros te olvidas de anticipos del 50%, obtienes tu sitio listo y en línea en 24 hrs.,== y te ahorras la curva de aprendizaje del «hágalo usted mismo»; que suele ser mucho más pronunciada —y dilatada— de lo que te parece."
+          "pregunta": "La autoedición, como alternativa, es mucho más económica. ¿No es demasiado costoso elegir la propuesta aquí ofrecida?",
+          "respuesta": "Comparada con nuestra propuesta, los servicios de autoedición serían una alternativa muy accesible si el costo de la autoedición incluyera los servicios de edición/publicación. En las soluciones \"DIY\" (hágalo usted mismo) se trata de todo lo contrario: en las mencionadas plataformas de autoedición, como su nombre lo indica, quien hace el trabajo eres tú. Por eso el costo parece tan bajo: en realidad no están ofreciendo ningún servicio, solo proporcionan el software (en línea) para que cada usuario/a haga su propio libro.\n\nSi tú, como usuario, tienes la experiencia, la habilidad y, sobre todo, el tiempo para editar tu propio libro, entonces la autoedición es la opción adecuada. De lo contrario, lo que suele suceder, es que quienes optan por esta alternativa terminan contratando a un freelance para que les termine el trabajo. Con una desventaja: los software de edición que ofrecen estas plataformas no cumplen con el estándar de la industria. Dichos recursos son aplicaciones simplificadas, precisamente, para que toda persona pueda hacer su propia edición. Cuanto más simplificado es el programa, menos funcionalidades se tienen al momento de requerir una edición verdaderamente profesional. Al final, lo que suele suceder, es que el editor, o editora, tiene que empezar de nuevo.^4^"
         },
         {
-          "pregunta": "¿Por qué no optar por una casa editorial tradicional entonces?",
-          "respuesta": "Cuando llega el momento de tener tu propia página web, usualmente tienes dos opciones: contratar a un diseñador/a (bajo el típico esquema del 50% de anticipo, 50% contra entrega) o entrarle a hacer tu propio diseño con alguna de las grandes plataformas del \"hágalo usted mismo\" ( DIY).\n\n**GraphicaWeb** se presenta como una opción más conveniente. Haces un primer pago, que puede ser hasta de $825 MXN (a 12 meses sin intereses). ==Con nosotros te olvidas de anticipos del 50%, obtienes tu sitio listo y en línea en 24 hrs.,== y te ahorras la curva de aprendizaje del «hágalo usted mismo»; que suele ser mucho más pronunciada —y dilatada— de lo que te parece."
+          "pregunta": "¿Por qué no optar entonces por una casa editorial tradicional?",
+          "respuesta": "Exactamente: esa sería la opción más adecuada… tan solo si la casa editorial —o tu agente— considerara tu manuscrito.\n\nEn la industria de la publicación y comercialización de libros, es sabido —tanto por escritores profesionales como por agentes y casas editoriales— que solo se aceptan para publicación aproximadamente entre el 0,5% y el 1% de los manuscritos que se reciben habitualmente.^6^\n\nEn este caso, por supuesto, la casa editorial cubre el costo total de la obra: desde su publicación e impresión hasta su distribución."
+        },
+        {
+          "pregunta": "¿Qué pasa si no tengo tesis alguna? ¿Aún puedo publicar mi manuscrito?",
+          "respuesta": "Ciertamente. Sin embargo, conviene aclarar lo siguiente: una tesis de grado o posgrado ha sido objeto de una rigurosa revisión por parte de un cuerpo colegiado de académicos que pertenecen a una institución universitaria. El producto del proyecto de investigación es, por lo tanto, un esfuerzo colectivo de dichos académicos, acompañado por una tutoría designada y por el propio tesista. En ese sentido, la publicación de una tesis de grado o de posgrado —en formato de libro— suele ser un paso sólido hacia una obra respetable.\n\nPara un manuscrito que no ha pasado por este proceso colegiado, lo más recomendable es solicitar el servicio de revisión y corrección de estilo. **PostLibris** también ofrece esta alternativa, pero su costo no está incluido en el precio aquí ofrecido. Para conocer los costos de este servicio, por favor contáctanos a través del formulario que aparece más abajo."
         }
       ],
       "fondo_gris": false,
