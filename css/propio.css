@@ -1,11 +1,16 @@
 /* Ajustes de diseño propios de este sitio. La consola lo conserva al subir
    una versión nueva de la plantilla; css/styles.css sí se reemplaza. */
 
-/* Titular de la portada siempre en 3 líneas («Convierte tu / tesis en un
-   libro / académico.»). Si cambia el texto del titular, recalcular el ancho. */
+/* Titular de la portada siempre en 3 líneas, cortado igual en todos los
+   anchos: «Tener un libro / publicado te da / prestigio.». El ancho va en em
+   (crece con la letra): cabe «publicado te da» (7.30em) y no cabe «Tener un
+   libro publicado» (11.23em). 'wrap' en lugar de 'balance': balance prefería
+   «Tener un / libro publicado / te da prestigio.».
+   Si cambia el texto del titular, recalcular el ancho. */
 .hero__title {
-  max-width: 7.55em;
+  max-width: 7.6em;
   margin-inline: auto;
+  text-wrap: wrap;
 }
 
 /* Subtítulo de la portada con el interletrado un poco más cerrado. */
