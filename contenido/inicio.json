@@ -19,12 +19,12 @@
     },
     {
       "oculto": false,
-      "boton_secundario": "Preguntas frecuentes",
+      "boton_secundario": "Publica tu libro",
       "boton_principal_enlace": "#como-funciona",
       "ancla": "hero",
       "tipo": "hero",
-      "boton_principal": "Cómo funciona",
-      "boton_secundario_enlace": "#faq",
+      "boton_principal": "Como funciona",
+      "boton_secundario_enlace": "#precios",
       "subtitulo": "Convierte tu tesis de licenciatura, posgrado o cualquier otro manuscrito ==en una obra profesional, **editada y lista para su publicación.**==",
       "titulo": "Tener un libro publicado te da prestigio."
     },
@@ -52,8 +52,8 @@
           "icono": "barcode"
         }
       ],
-      "boton": "",
-      "boton_enlace": "#cta",
+      "boton": "Publica tu libro",
+      "boton_enlace": "#precios",
       "fondo_gris": true,
       "ancla": "como-funciona"
     },
